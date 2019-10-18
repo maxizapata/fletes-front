@@ -1,0 +1,22 @@
+<ion-header color=primary no-border >
+  <ion-navbar>
+    <ion-title>Iniciar sesión</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="backgroud-purple">  
+  <form (submit)="doLogin()">
+    <ion-item class="form">
+      <ion-label stacked color="dark">Correo electrónico</ion-label>
+      <ion-input [(ngModel)]="loginData.username" name="username" type="email"></ion-input>
+    </ion-item>
+    <ion-item class="form">
+      <ion-label stacked color="dark">Contraseña</ion-label>
+      <ion-input [(ngModel)]="loginData.password" name="password" type="password"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button block type="submit">
+    Iniciar sesión
+    </button>
+  </form>
+</ion-content>

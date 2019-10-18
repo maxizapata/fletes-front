@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar color="dark">
+      <ion-title>FUB</ion-title>
+    </ion-navbar>
+  </ion-header>  
+<ion-content padding class="backgroud-purple">
+  <p class="text-title">Necesitamos verificar tu número de telefono</p>
+  <form (submit)="goInformation()">
+      <ion-label stacked color="dark" class="text-notice">Introduce tu número de telefono<br>(debe ser de una compañia telefónica chilena).</ion-label>
+      <ion-item class="form">
+        <ion-label inline color="dark">(+569)</ion-label>
+        <ion-input [(ngModel)]="user.phone_number" name="phone_number" type="tel" placeholder="12345678" maxlength="8"></ion-input>
+      </ion-item>
+      <ion-footer no-shadow no-border padding>
+        <button ion-fab type="Enviar" color="secondary" class="rigth-button" *ngIf="user.phone_number; else button_disable"><ion-icon name="checkmark"></ion-icon></button>
+        <ng-template #button_disable>
+          <button ion-fab type="Enviar" color="secondary" class="rigth-button" [disabled]="!isenabled"><ion-icon name="checkmark"></ion-icon></button>
+        </ng-template>        
+      </ion-footer>
+  </form>
+</ion-content>
+    

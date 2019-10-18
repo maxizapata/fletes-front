@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-navbar color="dark">
+      <ion-title>FUB</ion-title>
+    </ion-navbar>
+  </ion-header>  
+<ion-content padding class="backgroud-purple">
+  <p class="text-title">Introduce el codigo de seguridad enviado a tu celular.</p>
+  <form (submit)="sendToken()">
+      <ion-item class="form">
+        <ion-input [(ngModel)]="sms_code" name="sms_code" type="number" maxlength="4"></ion-input>
+      </ion-item>
+      <ion-footer no-shadow no-border padding>
+        <button ion-fab type="Enviar" color="secondary" class="rigth-button" *ngIf="sms_code"><ion-icon name="checkmark"></ion-icon></button>
+        <ng-template #button_disable>
+          <button ion-fab type="Enviar" color="secondary" class="rigth-button" [disabled]="!isenabled"><ion-icon name="checkmark"></ion-icon></button>
+        </ng-template>        
+      </ion-footer>
+  </form>
+</ion-content>
+    

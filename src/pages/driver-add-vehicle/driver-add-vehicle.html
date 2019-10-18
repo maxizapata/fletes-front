@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>FUB</ion-title>
+  </ion-navbar>
+</ion-header>  
+<!-- ---- -->
+<ion-content class="backgroud-purple">
+  <form (submit)="addVehicle()">
+    <!-- --------------------------------------------------------------------------- -->
+    <ion-item class="form">
+      <ion-label stacked color="dark">Placa del vehiculo</ion-label>
+      <ion-input [(ngModel)]="license_plate" name="license_plate" type="text"></ion-input>
+    </ion-item>
+    <!-- --------------------------------------------------------------------------- -->
+    <ion-item class="form">
+      <ion-label stacked color="dark">Modelo</ion-label>
+      <ion-input [(ngModel)]="model" name="model" type="text"></ion-input>
+    </ion-item>
+    <!-- --------------------------------------------------------------------------- -->
+    <ion-item class="form">
+      <ion-label stacked color="dark">Marca</ion-label>
+      <ion-input [(ngModel)]="make" name="make" type="text"></ion-input>
+    </ion-item>
+    <!-- --------------------------------------------------------------------------- -->
+    <ion-item class="form">
+      <ion-label stacked color="dark">Año</ion-label>
+      <ion-input [(ngModel)]="year" name="year" type="number"></ion-input>
+    </ion-item>
+    <!-- --------------------------------------------------------------------------- -->
+    <ion-item class='form'>
+      <ion-label stacked color="dark">Tipo de vehiculo</ion-label>
+        <ion-select [(ngModel)]="vehicle_type" name="vehicle_type" cancelText="Cancelar">
+          <ion-option *ngFor="let vehicle of vehicles.vehicle_list" value="{{ vehicle.name }}">{{ vehicle.name_pretty }}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-footer no-shadow no-border padding>
+        <button ion-fab type="submit" class="rigth-button" *ngIf="vehicle_type; else button_disable"><ion-icon name="arrow-round-forward"></ion-icon></button>
+        <ng-template #button_disable>
+          <button ion-fab class="rigth-button" [disabled]="!isenabled"><ion-icon name="arrow-round-forward"></ion-icon></button>
+        </ng-template>   
+        <!--  -->     
+      </ion-footer>   
+  </form>
+</ion-content>
+  

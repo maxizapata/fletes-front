@@ -1,0 +1,21 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title>Registrar usuario</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="backgroud-purple">
+<p class="text-title">Para finalizar indícanos tu email</p>
+<form (submit)="signupOrError()">
+  <ion-item class="form">
+    <ion-label stacked color="dark">Email</ion-label>
+    <ion-input [(ngModel)]="email" name="email" type="email"></ion-input>
+  </ion-item>
+  <ion-footer no-shadow no-border padding>
+    <button ion-fab type="Enviar" color="secondary" class="rigth-button" *ngIf="email; else button_disable"><ion-icon name="checkmark"></ion-icon></button>
+    <ng-template #button_disable>
+      <button ion-fab type="Enviar" color="secondary" class="rigth-button" [disabled]="!isenabled"><ion-icon name="checkmark"></ion-icon></button>
+    </ng-template>        
+  </ion-footer>      
+</form>
+</ion-content>

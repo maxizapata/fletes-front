@@ -1,0 +1,24 @@
+<ion-header no-border>
+    <ion-navbar>
+      <ion-title>Registrar usuario</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+<ion-content padding class="backgroud-purple">
+  <form (submit)="goName()" class='form'>
+      <p class="text-title">¿Quieres ser cliente o conductor?</p>
+    <ion-item class='form'>
+      <ion-label stacked color="dark">Selecciona un perfil</ion-label>
+      <ion-select [(ngModel)]="user.group" name="group" cancelText="Cancelar">
+        <ion-option value="driver">Conductor</ion-option>
+        <ion-option value="rider">Cliente</ion-option>
+      </ion-select>
+      </ion-item>
+      <ion-footer no-shadow no-border padding>
+        <button ion-fab type="Enviar" class="rigth-button" *ngIf="user.group; else button_disable"><ion-icon name="arrow-round-forward"></ion-icon></button>
+        <ng-template #button_disable>
+          <button ion-fab type="Enviar" class="rigth-button" [disabled]="!isenabled"><ion-icon name="arrow-round-forward"></ion-icon></button>
+        </ng-template>        
+      </ion-footer>      
+  </form>
+</ion-content>

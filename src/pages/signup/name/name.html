@@ -1,0 +1,25 @@
+<ion-header no-border>
+    <ion-navbar>
+      <ion-title>Registrar usuario</ion-title>
+    </ion-navbar>
+  </ion-header>
+    
+  <ion-content padding class="backgroud-purple">
+    <p class="text-title">¿Como te llamas?</p>
+    <form (submit)="goMobile()">
+      <ion-item class="form">
+        <ion-label stacked color="dark">Nombre</ion-label>
+        <ion-input [(ngModel)]="user.first_name" name="first_name" type="text"></ion-input>
+      </ion-item>
+      <ion-item class="form">
+        <ion-label stacked color="dark">Apellido</ion-label>
+        <ion-input [(ngModel)]="user.last_name" name="last_name" type="text"></ion-input>
+      </ion-item>
+      <ion-footer no-shadow no-border padding>
+        <button ion-fab type="Enviar" class="rigth-button" *ngIf="user.first_name && user.last_name; else button_disable"><ion-icon name="arrow-round-forward"></ion-icon></button>
+        <ng-template #button_disable>
+          <button ion-fab type="Enviar" class="rigth-button" [disabled]="!isenabled"><ion-icon name="arrow-round-forward"></ion-icon></button>
+        </ng-template>        
+      </ion-footer>      
+    </form>
+  </ion-content>

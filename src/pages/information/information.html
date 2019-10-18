@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>FUB</ion-title>
+  </ion-navbar>
+</ion-header>  
+<ion-content padding class="backgroud-purple">
+<p class="text-title">{{ information_title }}</p>
+<form (submit)="goValidate()">
+    <ion-footer no-shadow no-border padding>
+      <button ion-button block type="Enviar" color="secondary" class="prueba">{{ button_text }}</button>
+    </ion-footer>
+</form>
+</ion-content>
+  

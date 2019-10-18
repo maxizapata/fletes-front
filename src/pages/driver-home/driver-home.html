@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>FUB</ion-title>
+  </ion-navbar>
+</ion-header>  
+<ion-content class="backgroud-purple">
+<p *ngIf="check_vehicles()">Tus vehiculos</p>
+<ion-list *ngIf="check_vehicles(); else no_vehicles">
+  <ion-item class="backgroud-purple" *ngFor="let vehicle of vehicles.driver_vehicles">
+    <ion-toggle checked="false"></ion-toggle>
+    <ion-label>
+      {{ vehicle.make }} - {{ vehicle.model }}
+    </ion-label> 
+  </ion-item> 
+</ion-list>
+
+<ng-template #no_vehicles>
+  <p padding class="text-title">No tienes vehiculos agregados</p>
+</ng-template>
+<ion-footer no-shadow no-border padding>
+  <button ion-button block color="secondary" (click)="go_add_vehicle()">Agregar vehiculo</button>
+</ion-footer> 
+</ion-content>
+  

@@ -1,3 +1,4 @@
+<!--
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -6,13 +7,17 @@
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
+-->
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<ion-content padding class="content">
+    <ion-header padding no-border class="header">
+        <img src="../../assets/imgs/logo_fub.png">
+    </ion-header>
+      
+  <h3></h3>
+    <ion-footer no-shadow no-border padding>
+        <button ion-button block outline color="light" (click)='checkUser()'>CHECK USER</button>
+        <button ion-button block outline color="light" (click)='goLogin()'>INICIAR SESION</button>
+        <button ion-button block (click)='goSignup()'>REGISTRARSE</button>
+    </ion-footer>
 </ion-content>
