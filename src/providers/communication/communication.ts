@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from "rxjs/Rx";
+import { Observable, Subject } from "rxjs/Rx";
 import { WebsocketProvider } from "../websocket/websocket";
 
 const CHAT_URL = "ws://192.168.0.103:8000/ws/trip/";

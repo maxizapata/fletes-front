@@ -78,7 +78,8 @@ import { WebsocketProvider } from '../providers/websocket/websocket';
     VehiclesProvider,
     CommunicationProvider,
     WebsocketProvider,
-    WebsocketProvider
+    WebsocketProvider,
+    TripProvider
   ]
 })
 export class AppModule {}
