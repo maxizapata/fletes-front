@@ -26,6 +26,8 @@ import { DriverHomePage } from '../pages/driver-home/driver-home';
 import { InformationPage } from '../pages/information/information';
 import { VehiclesProvider } from '../providers/vehicles/vehicles';
 import { DriverAddVehiclePage } from '../pages/driver-add-vehicle/driver-add-vehicle';
+import { CommunicationProvider } from '../providers/communication/communication';
+import { WebsocketProvider } from '../providers/websocket/websocket';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,10 @@ import { DriverAddVehiclePage } from '../pages/driver-add-vehicle/driver-add-veh
     ControllerProvider,
     TripProvider,
     VehiclesProvider,
-    VehiclesProvider
+    VehiclesProvider,
+    CommunicationProvider,
+    WebsocketProvider,
+    WebsocketProvider
   ]
 })
 export class AppModule {}
