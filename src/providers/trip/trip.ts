@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { WebSocketSubject } from 'rxjs/webSocket';
 import { Observable } from 'rxjs';
 import { map, share } from 'rxjs/operators';
+import { RequestProvider } from '../request/request';
+import { UserProvider } from '../../providers/user/user'
 
 @Injectable()
 export class TripProvider {
@@ -10,11 +12,15 @@ export class TripProvider {
   webSocketReceive: WebSocket
   messages: Observable<any>; 
 
-  constructor(public http: HttpClient) {}
+  constructor(
+    public http: HttpClient,
+    public request: RequestProvider,
+    public user: UserProvider
+    ) {}
   
   wsConnect(): void{
     if (!this.webSocket || this.webSocket.complete){
-      this.webSocket = new WebSocketSubject('ws://192.168.0.103:8000/ws/trip/');
+      this.webSocket = new WebSocketSubject(this.request.set_url('ws_connect', this.user.id, 'camioneta'));
       this.messages = this.webSocket.pipe(share());
       this.messages.subscribe(message => console.log(message))
     }

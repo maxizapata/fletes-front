@@ -24,12 +24,12 @@ export class PhoneNumberPage {
 
   goInformation(){
     let headers = {'Content-Type':  'application/json', 'Authorization': 'Token ' + this.user.token }
-    this.request.requestsPatch('user_info', 
+    let a = this.request.requestsPatch('user_info', 
                                 headers, {'user_id': this.user.id, 
                                 'phone_number': '+569' + this.user.phone_number})
-    console.log('GO INFORMATION')
     this.navCtrl.push(InformationPage, 
       {information_title: 'Necesitamos validar tu identidad, para eso enviaremos un codigo de seguridad via sms a tu telefóno celular', button_text: 'Recibir token'})
+    console.log(a)
   }
 
   goPhoneValidate(){

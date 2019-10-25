@@ -35,17 +35,21 @@ export class LoadPage {
   }
 
   getGroup(){
+    console.log('Estamos en get Group')
     // Cargamos la lista de los vehiculos
-    this.vehicles.getListVehicles()
     if (this.user.group){
+      console.log('Hay grupo')
+      this.vehicles.getListVehicles()
       // Si esta definido el grupo verificamos cual es
       if (this.user.verifiedMobile){
+        console.log('El numero esta verificado')
         this.driverOrRider()
       } else {
+        console.log('El numero no esta verificado')
         this.navCtrl.push(PhoneNumberPage)
       }
-
     } else {
+      console.log('Volvemos a cargar')
       // Si aun no esta cargado volvemos a cargar la pagina
       // hasta tener la info
       this.navCtrl.setRoot(LoadPage)

@@ -4,16 +4,21 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class RequestProvider {
 
-  constructor(public http: HttpClient) {}
+  constructor(
+    public http: HttpClient,
+    ) {}
 
-  public domain: string = '192.168.0.135:8000';
+  public domain: string = '192.168.0.110:8000';
     
-  set_url(action: string, vehicle?: string){
+  set_url(action: string, user_id?, vehicle?: string){
     let http = "http://"
     let ws = "ws://"
     let url: string
     if (action === 'login'){
       url = http + this.domain + "/api/auth/login/";
+    }
+    else if (action === 'ws_connect'){
+      url = ws + this.domain + '/ws/trips/' + user_id + '/' + vehicle + '/'
     }
     else if (action === 'signup'){
       console.log('request.ts signup')
