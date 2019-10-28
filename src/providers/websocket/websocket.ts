@@ -1,20 +1,41 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as Rx from "rxjs/Rx";
+import { WebSocketSubject } from 'rxjs/webSocket';
+import { Observable } from 'rxjs';
+import { RequestProvider } from '../request/request';
+import { map, share } from 'rxjs/operators';
+import { UserProvider } from '../user/user';
 
 @Injectable()
 export class WebsocketProvider {
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient,
+              public request: RequestProvider,
+              public user: UserProvider) {}
+
+  webSocket: WebSocketSubject<any>;
+  webSocketReceive: WebSocket
+  messages: Observable<any>; 
 
   private subject: Rx.Subject<MessageEvent>;
 
+  /*
   public connect(url): Rx.Subject<MessageEvent> {
     if (!this.subject) {
       this.subject = this.create(url);
       console.log("Successfully connected: " + url);
     }
     return this.subject;
+  }
+  */
+
+  connect(vehicle): void{
+    if (!this.webSocket || this.webSocket.complete){
+      this.webSocket = new WebSocketSubject(this.request.set_url('ws_connect', this.user.id, vehicle));
+      this.messages = this.webSocket.pipe(share());
+      this.messages.subscribe(message => console.log(message))
+    }
   }
 
   private create(url): Rx.Subject<MessageEvent> {
@@ -35,4 +56,10 @@ export class WebsocketProvider {
     };
     return Rx.Subject.create(observer, observable);
   }
+
+  disconnect(){
+    console.log('Notice: Disconnect function')
+    this.webSocket.complete()
+  }
+
 }

@@ -8,7 +8,7 @@ export class RequestProvider {
     public http: HttpClient,
     ) {}
 
-  public domain: string = '192.168.0.110:8000';
+  public domain: string = '192.168.0.129:8000';
     
   set_url(action: string, user_id?, vehicle?: string){
     let http = "http://"
@@ -32,6 +32,9 @@ export class RequestProvider {
     }
     else if (action === 'driver_vehicles'){
       url = http + this.domain + "/api/trips/user-vehicles/";
+    }
+    else if (action === 'add_vehicle'){
+      url = http + this.domain + "/api/trips/create-vehicle/";
     }
     else if (action === 'get_mobile_token'){
       url = http + this.domain + "/api/mobile-token/";
@@ -81,5 +84,19 @@ export class RequestProvider {
     });
   }
 
+  isValid(http_response, desired_status_code){
+    if (http_response === desired_status_code){
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 
+  getHeaders(){
+    return {
+      'Content-Type':  'application/json', 
+      'Authorization': 'Token ' + localStorage.getItem('token') 
+    }
+  }
 }

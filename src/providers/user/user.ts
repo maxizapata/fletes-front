@@ -31,8 +31,6 @@ export class UserProvider {
       let headers = {'Content-Type':  'application/json', 'Authorization': 'Token ' + token };
       this.requestProvider.resquestGet('user_info', headers)
         .subscribe((data) => {
-          console.log('Cargando datos de usuario...');
-          console.log(data['email'])
           this.id = data['id'];
           this.email = data['email'];
           this.first_name = data['first_name'];
@@ -41,8 +39,6 @@ export class UserProvider {
           this.photo = data['photo'];
           this.phone_number = data['phone_number'];
           this.verifiedMobile = data['verified_mobile'];
-          console.log('En user verificando el telefono')
-          console.log(data)
           this.token = token;
         },
       (error)=>{

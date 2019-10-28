@@ -6,8 +6,8 @@
 <ion-content class="backgroud-purple">
 <p *ngIf="check_vehicles()">Tus vehiculos</p>
 <ion-list *ngIf="check_vehicles(); else no_vehicles">
-  <ion-item class="backgroud-purple" *ngFor="let vehicle of vehicles.driver_vehicles">
-    <ion-toggle float-right [(ngModel)]="driverSwitch" color="secondary" checked="false" (ionChange)="notify(vehicle)"></ion-toggle>
+  <ion-item class="backgroud-purple" *ngFor="let vehicle of vehicles.driverVehicles">
+    <ion-toggle float-right [(ngModel)]="vehicle.is_active" color="secondary" checked="false" (ionChange)="vehicleStatus(vehicle)" cancelable=true></ion-toggle>
     <ion-label>
       {{ vehicle.make }} - {{ vehicle.model }}
     </ion-label> 

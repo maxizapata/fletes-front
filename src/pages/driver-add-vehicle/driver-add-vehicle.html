@@ -30,7 +30,7 @@
     <ion-item class='form'>
       <ion-label stacked color="dark">Tipo de vehiculo</ion-label>
         <ion-select [(ngModel)]="vehicle_type" name="vehicle_type" cancelText="Cancelar">
-          <ion-option *ngFor="let vehicle of vehicles.vehicle_list" value="{{ vehicle.name }}">{{ vehicle.name_pretty }}</ion-option>
+          <ion-option *ngFor="let vehicle of vehicle.vehicleList" value="{{ vehicle.id }}">{{ vehicle.name_pretty }}</ion-option>
         </ion-select>
     </ion-item>
     <ion-footer no-shadow no-border padding>

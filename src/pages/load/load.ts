@@ -7,7 +7,8 @@ import { DriverHomePage } from '../driver-home/driver-home';
 import { LoginPage } from '../login/login';
 import { PhoneValidatePage } from '../phone-validate/phone-validate';
 import { HomePage } from '../home/home';
-import { VehiclesProvider } from '../../providers/vehicles/vehicles';
+import { VehicleProvider } from '../../providers/vehicle/vehicle';
+import { RiderHomePage } from '../rider-home/rider-home';
 
 @IonicPage()
 @Component({
@@ -20,7 +21,7 @@ export class LoadPage {
               public navParams: NavParams,
               public user: UserProvider,
               public controller: ControllerProvider,
-              public vehicles: VehiclesProvider) {}
+              public vehicles: VehicleProvider) {}
 
   ionViewDidLoad(){
     if (this.user.isAuthenticated()){
@@ -60,6 +61,8 @@ export class LoadPage {
     if (this.user.group === 'driver'){
       this.vehicles.getDriverVehicles()
       this.navCtrl.setRoot(DriverHomePage);
+    } else if (this.user.group === 'rider'){
+      this.navCtrl.setRoot(RiderHomePage)
     }
   }
 

@@ -24,10 +24,15 @@ import { PasswordPage } from '../pages/signup/password/password';
 import { LoadPage } from '../pages/load/load';
 import { DriverHomePage } from '../pages/driver-home/driver-home';
 import { InformationPage } from '../pages/information/information';
-import { VehiclesProvider } from '../providers/vehicles/vehicles';
 import { DriverAddVehiclePage } from '../pages/driver-add-vehicle/driver-add-vehicle';
 import { CommunicationProvider } from '../providers/communication/communication';
 import { WebsocketProvider } from '../providers/websocket/websocket';
+import { VehicleProvider } from '../providers/vehicle/vehicle';
+import { RiderHomePage } from '../pages/rider-home/rider-home';
+import { RiderPlacesPage } from '../pages/rider-places/rider-places';
+import { RiderVehiclePage } from '../pages/rider-vehicle/rider-vehicle';
+import { RiderDatePage } from '../pages/rider-date/rider-date';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +48,11 @@ import { WebsocketProvider } from '../providers/websocket/websocket';
     LoadPage,
     DriverHomePage,
     DriverAddVehiclePage,
-    InformationPage
+    InformationPage,
+    RiderHomePage,
+    RiderPlacesPage,
+    RiderVehiclePage,
+    RiderDatePage
   ],
   imports: [
     BrowserModule,
@@ -64,7 +73,11 @@ import { WebsocketProvider } from '../providers/websocket/websocket';
     LoadPage,
     DriverHomePage,
     DriverAddVehiclePage,
-    InformationPage
+    InformationPage,
+    RiderHomePage,
+    RiderPlacesPage,
+    RiderVehiclePage,
+    RiderDatePage,
   ],
   providers: [
     StatusBar,
@@ -74,12 +87,11 @@ import { WebsocketProvider } from '../providers/websocket/websocket';
     RequestProvider,
     ControllerProvider,
     TripProvider,
-    VehiclesProvider,
-    VehiclesProvider,
     CommunicationProvider,
     WebsocketProvider,
     WebsocketProvider,
-    TripProvider
+    TripProvider,
+    VehicleProvider,
   ]
 })
 export class AppModule {}

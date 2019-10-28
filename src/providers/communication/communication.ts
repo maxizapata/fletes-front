@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from "rxjs/Rx";
-import { WebsocketProvider } from "../websocket/websocket";
-
-const CHAT_URL = "ws://192.168.0.103:8000/ws/trip/";
+import { WebsocketProvider } from '../websocket/websocket';
+import { RequestProvider } from '../request/request';
+import { UserProvider } from '../user/user';
 
 export interface Message {
   author: string;
@@ -14,15 +14,7 @@ export interface Message {
 export class CommunicationProvider {
   public messages: Subject<Message>;
 
-  constructor(wsService: WebsocketProvider) {
-    this.messages = <Subject<Message>>wsService.connect(CHAT_URL).map(
-      (response: MessageEvent): Message => {
-        let data = JSON.parse(response.data);
-        return {
-          author: data.author,
-          message: data.message
-        };
-      }
-    );
-  }
+  constructor(public wsService: WebsocketProvider,
+              public request: RequestProvider,
+              public user: UserProvider) {}
 }

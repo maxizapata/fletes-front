@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>FUB</ion-title>
+  </ion-navbar>
+</ion-header>  
+
+<ion-content class="backgroud-purple">
+  <ion-slides pager>
+    <ion-slide *ngFor='let vehicle of vehicle.vehicleList'>
+      <button (click)="goRiderDate(vehicle.id)">
+        <img src="{{ vehicle.picture }}">
+      </button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

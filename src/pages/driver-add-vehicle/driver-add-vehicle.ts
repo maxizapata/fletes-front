@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { VehiclesProvider } from '../../providers/vehicles/vehicles';
-import { DriverHomePage } from '../driver-home/driver-home'
+import { VehicleProvider } from '../../providers/vehicle/vehicle';
+import { DriverHomePage } from '../driver-home/driver-home';
+import { RequestProvider } from '../../providers/request/request';
+import { UserProvider } from '../../providers/user/user';
+import { ControllerProvider } from '../../providers/controller/controller';
+import { LoadPage } from '../load/load';
 
 @IonicPage()
 @Component({
@@ -13,11 +17,14 @@ export class DriverAddVehiclePage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public vehicles: VehiclesProvider) {
+    public vehicle: VehicleProvider,
+    public request: RequestProvider,
+    public user: UserProvider,
+    public controller: ControllerProvider) {
   }
 
   ionViewDidLoad(){
-    console.log(this.vehicles.vehicle_list)
+    console.log(this.vehicle.vehicleList)
   }
 
   license_plate: string
@@ -27,8 +34,19 @@ export class DriverAddVehiclePage {
   vehicle_type: string
 
   addVehicle(){
-    console.log(this.vehicle_type)
-    this.navCtrl.push(DriverHomePage)
+    let headers = this.request.getHeaders()
+    let data = {
+      'driver': this.user.id,
+      'license_plate': this.license_plate,
+      'model': this.model,
+      'make': this.make,
+      'year': this.year,
+      'vehicle_type': this.vehicle_type
+    } 
+    this.request.requestsPost('add_vehicle', headers, data).then((result)=>{
+      console.log(result)
+        this.navCtrl.push(LoadPage);
+    })
   }
 
   

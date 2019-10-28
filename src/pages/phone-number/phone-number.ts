@@ -24,17 +24,22 @@ export class PhoneNumberPage {
 
   goInformation(){
     let headers = {'Content-Type':  'application/json', 'Authorization': 'Token ' + this.user.token }
-    let a = this.request.requestsPatch('user_info', 
-                                headers, {'user_id': this.user.id, 
-                                'phone_number': '+569' + this.user.phone_number})
-    this.navCtrl.push(InformationPage, 
-      {information_title: 'Necesitamos validar tu identidad, para eso enviaremos un codigo de seguridad via sms a tu telefóno celular', button_text: 'Recibir token'})
-    console.log(a)
+    this.request.requestsPatch('user_info', headers, {'user_id': this.user.id, 'phone_number': '+569' + this.user.phone_number})
+    .then((data) => {
+      if (this.request.isValid(data, 201)){
+        this.navCtrl.push(InformationPage,
+          {information_title: 'Necesitamos validar tu identidad, para eso enviaremos un codigo de seguridad via sms a tu telefóno celular', button_text: 'Recibir token'})
+      } else {
+        console.log(data)
+        this.controller.presentAlert('Número invalido', 'No se pudo procesar tu número telefónico, verificalo y vuelve a intentar.')
+      }
+    })   
   }
 
   goPhoneValidate(){
     console.log('ejecuto validate phone');
     this.navCtrl.push(PhoneValidatePage)
   }
+
 
 }

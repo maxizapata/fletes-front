@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { VehiclesProvider } from '../../providers/vehicles/vehicles'
+import { VehicleProvider } from '../../providers/vehicle/vehicle'
 import { DriverAddVehiclePage } from '../driver-add-vehicle/driver-add-vehicle';
 import { CommunicationProvider } from '../../providers/communication/communication'
 import { TripProvider } from '../../providers/trip/trip';
+import { WebsocketProvider } from '../../providers/websocket/websocket'
 
 
 @IonicPage()
@@ -15,18 +16,19 @@ export class DriverHomePage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public vehicles: VehiclesProvider,
+    public vehicles: VehicleProvider,
     public comm: CommunicationProvider,
-    public trip: TripProvider) {}
+    public trip: TripProvider,
+    public ws: WebsocketProvider) {}
 
   map: any;
   driverStatus: string = 'Conductor Desactivado';
   driverSwitch: boolean;
-  ws: WebSocket;
+  //ws: WebSocket;
   selected_vehicle: true;
   
   check_vehicles(){
-    if (this.vehicles.driver_vehicles){
+    if (this.vehicles.driverVehicles){
       return true;
     } else {
       return false;
@@ -48,23 +50,17 @@ export class DriverHomePage {
     this.message.message = "";
   }
 
-
-  notify(vehicle){
-    console.log(vehicle)
-    if (this.driverSwitch == true){
-      console.log('Es TRUE --------')
-      this.driverStatus = 'Conductor Activado';
-      console.log('Antes de wsconnect')
-      this.trip.wsConnect();
-      console.log('Despues de ws connect')
+  vehicleStatus(vehicle:any){
+    if (vehicle.is_active == true){
+      console.log('Conectando vehiculo al websocket');
+      this.ws.connect(vehicle.vehicle_type);
     }
-    if (this.driverSwitch == false){
-      console.log('Es FALSE --------')
-      this.trip.wsDisconnect()
-      this.driverStatus = 'Conductor Desactivado'
-    }
-    console.log(this.driverStatus)
+    else if (vehicle.is_active == false){
+      console.log('Desconectando vehicle al websocket');
+      this.ws.disconnect();
+    }    
   }
+  
   
 
 }
