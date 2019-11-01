@@ -4,15 +4,23 @@
   </ion-navbar>
 </ion-header>  
 <ion-content class="backgroud-purple">
-<p>Hola {{ user.first_name }} {{ user.last_name }}</p>
+  <form (submit)="goMap()">
 
+    <ion-item class="form">
+      <ion-label stacked color="dark">Punto de partida</ion-label>
+      <ion-input [(ngModel)]="trip.pick_up" name="pick_up" type="text"></ion-input>
+    </ion-item>
 
-<!-- FOOTER -->
-<ion-footer no-shadow no-border padding>
-  <button ion-button block color="secondary" (click)="createTrip()">Pedir un servicio</button>
-  <button ion-button block color="secondary" (click)="historyTrip()">Historial</button>
-</ion-footer> 
-<!-- FOOTER -->
+    <ion-item class="form">
+      <ion-label stacked color="dark">Contraseña</ion-label>
+      <ion-input [(ngModel)]="trip.drop_off" name="drop_off" type="text"></ion-input>
+    </ion-item>
 
+    <ion-footer no-shadow no-border padding>
+      <button ion-fab type="Enviar" color="secondary" class="rigth-button" *ngIf="trip.drop_off && trip.pick_up; else button_disable"><ion-icon name="checkmark"></ion-icon></button>
+      <ng-template #button_disable>
+        <button ion-fab type="Enviar" color="secondary" class="rigth-button" [disabled]="!isenabled"><ion-icon name="checkmark"></ion-icon></button>
+      </ng-template>        
+    </ion-footer> 
+  </form>
 </ion-content>
-  

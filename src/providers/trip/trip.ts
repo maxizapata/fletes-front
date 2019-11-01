@@ -2,10 +2,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RequestProvider } from '../request/request';
 import { UserProvider } from '../../providers/user/user';
-import { WebsocketProvider } from '../websocket/websocket'
+import { WebsocketProvider } from '../websocket/websocket';
+import { WebSocketSubject } from 'rxjs/webSocket';
+import { Observable } from 'rxjs';
+import { map, share } from 'rxjs/operators';
 
 @Injectable()
 export class TripProvider {
+  webSocket: WebSocketSubject<any>;
+  webSocketReceive: WebSocket
+  messages: Observable<any>; 
+
   constructor(
     public http: HttpClient,
     public request: RequestProvider,
@@ -22,21 +29,35 @@ export class TripProvider {
   create_at: string
   update_at: string
   status: string
-  vehicle: string  
+  vehicle: string
+  date: string
+  hour: string
 
-  createTrip(rider, pick_up, drop_off, veh_type): void {
-    this.ws.connect('camioneta');
-    const message: any = {
-      type: 'create.trip',
-      veh_type: veh_type,
-      user_id: rider,
-      data: {
-        rider: rider,
-        pick_up: pick_up,
-        drop_off: drop_off,
-      }
-    };
-    this.ws.webSocket.next(message);
+  connect(vehicle): void{
+    if (!this.webSocket || this.webSocket.complete){
+      this.webSocket = new WebSocketSubject(this.request.set_url('ws_connect', this.user.id, vehicle));
+      this.messages = this.webSocket.pipe(share());
+      this.messages.subscribe(message => console.log(message))
+    }
   }
+
+  send(action, data): void {
+    this.connect(this.vehicle);
+    const message: any = {
+      action: action,
+      veh_type: this.vehicle,
+      user_id: this.user.id,
+      token: this.user.token,
+      data: data
+    };
+    this.webSocket.next(message);
+  }
+
+
+  disconnect(){
+    console.log('Notice: Disconnect function')
+    this.webSocket.complete()
+  }
+
 
 }

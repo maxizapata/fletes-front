@@ -25,13 +25,16 @@ import { LoadPage } from '../pages/load/load';
 import { DriverHomePage } from '../pages/driver-home/driver-home';
 import { InformationPage } from '../pages/information/information';
 import { DriverAddVehiclePage } from '../pages/driver-add-vehicle/driver-add-vehicle';
-import { CommunicationProvider } from '../providers/communication/communication';
 import { WebsocketProvider } from '../providers/websocket/websocket';
 import { VehicleProvider } from '../providers/vehicle/vehicle';
 import { RiderHomePage } from '../pages/rider-home/rider-home';
 import { RiderPlacesPage } from '../pages/rider-places/rider-places';
 import { RiderVehiclePage } from '../pages/rider-vehicle/rider-vehicle';
 import { RiderDatePage } from '../pages/rider-date/rider-date';
+import { RiderMapPage } from '../pages/rider-map/rider-map';
+import { Geolocation } from '@ionic-native/geolocation';
+import { RiderDriverlistPage } from '../pages/rider-driverlist/rider-driverlist';
+import { WsCommProvider } from '../providers/ws-comm/ws-comm';
 
 
 @NgModule({
@@ -52,12 +55,14 @@ import { RiderDatePage } from '../pages/rider-date/rider-date';
     RiderHomePage,
     RiderPlacesPage,
     RiderVehiclePage,
-    RiderDatePage
+    RiderDatePage,
+    RiderMapPage,
+    RiderDriverlistPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -78,6 +83,8 @@ import { RiderDatePage } from '../pages/rider-date/rider-date';
     RiderPlacesPage,
     RiderVehiclePage,
     RiderDatePage,
+    RiderMapPage,
+    RiderDriverlistPage
   ],
   providers: [
     StatusBar,
@@ -87,11 +94,12 @@ import { RiderDatePage } from '../pages/rider-date/rider-date';
     RequestProvider,
     ControllerProvider,
     TripProvider,
-    CommunicationProvider,
     WebsocketProvider,
     WebsocketProvider,
     TripProvider,
     VehicleProvider,
+    Geolocation,
+    WsCommProvider
   ]
 })
 export class AppModule {}

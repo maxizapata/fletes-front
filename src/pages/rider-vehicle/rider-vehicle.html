@@ -7,7 +7,7 @@
 <ion-content class="backgroud-purple">
   <ion-slides pager>
     <ion-slide *ngFor='let vehicle of vehicle.vehicleList'>
-      <button (click)="goRiderDate(vehicle.id)">
+      <button (click)="goRiderDate(vehicle.name)">
         <img src="{{ vehicle.picture }}">
       </button>
     </ion-slide>

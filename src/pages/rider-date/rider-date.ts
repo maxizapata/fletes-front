@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TripProvider } from '../../providers/trip/trip';
+import { RiderPlacesPage } from '../rider-places/rider-places';
 
 
 @IonicPage()
@@ -9,11 +11,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RiderDatePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              public trip: TripProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RiderDatePage');
+  date: any
+  hour: any
+
+  verFecha(){
+    this.trip.date = this.date
+    this.trip.hour = this.hour;
+    this.navCtrl.push(RiderPlacesPage)
   }
 
 }

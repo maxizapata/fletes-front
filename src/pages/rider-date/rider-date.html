@@ -1,15 +1,24 @@
-<!--
-  Generated template for the RiderDatePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-  <ion-navbar>
-    <ion-title>rider-date</ion-title>
+  <ion-navbar color="dark">
+    <ion-title>FUB</ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header>  
 
-<ion-content padding>
-
+<ion-content class="backgroud-purple" padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="date"></ion-datetime>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Hora</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="hour"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <!-- FOOTER -->
+  <ion-footer no-shadow no-border padding>
+    <button ion-button block color="secondary" (click)="verFecha()">PPP</button>
+  </ion-footer> 
+  <!-- FOOTER -->
 </ion-content>

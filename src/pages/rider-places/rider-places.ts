@@ -1,12 +1,7 @@
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {Component, NgZone} from '@angular/core';
-
-/**
- * Generated class for the RiderPlacesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { TripProvider } from '../../providers/trip/trip'
+import { RiderMapPage } from '../rider-map/rider-map';
 
 @IonicPage()
 @Component({
@@ -15,11 +10,13 @@ import {Component, NgZone} from '@angular/core';
 })
 export class RiderPlacesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              public trip: TripProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RiderPlacesPage');
+  goMap(){
+    this.navCtrl.push(RiderMapPage)
   }
 
 }

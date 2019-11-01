@@ -8,7 +8,7 @@ export class RequestProvider {
     public http: HttpClient,
     ) {}
 
-  public domain: string = '192.168.0.129:8000';
+  public domain: string = '192.168.0.110:8000';
     
   set_url(action: string, user_id?, vehicle?: string){
     let http = "http://"
