@@ -59,7 +59,8 @@ export class LoadPage {
 
   driverOrRider(){
     if (this.user.group === 'driver'){
-      this.vehicles.getDriverVehicles()
+      this.vehicles.getDriverVehicles();
+      this.vehicles.getListVehicles();
       this.navCtrl.setRoot(DriverHomePage);
     } else if (this.user.group === 'rider'){
       this.navCtrl.setRoot(RiderHomePage)

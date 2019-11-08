@@ -30,18 +30,19 @@ export class TripProvider {
   update_at: string
   status: string
   vehicle: string
+  vehicle_name: string
   date: string
   hour: string
 
   connect(vehicle): void{
     if (!this.webSocket || this.webSocket.complete){
-      this.webSocket = new WebSocketSubject(this.request.set_url('ws_connect', this.user.id, vehicle));
+      this.webSocket = new WebSocketSubject(this.request.setUrl('ws_connect', this.user.id));
       this.messages = this.webSocket.pipe(share());
       this.messages.subscribe(message => console.log(message))
     }
   }
 
-  send(action, data): void {
+  send(action, data?): void {
     this.connect(this.vehicle);
     const message: any = {
       action: action,

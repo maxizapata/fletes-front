@@ -2,9 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RequestProvider } from '../request/request';
 
-@Injectable()
-export class VehiclesInfoProvider {}
-
 
 @Injectable()
 export class VehicleProvider {
@@ -24,7 +21,7 @@ export class VehicleProvider {
     .subscribe((data) => {
       this.driverVehicles = data
       this.driverVehicles.is_active = false
-      console.log(this.driverVehicles) 
+      //console.log(this.driverVehicles) 
     },
     (error)=>{
         console.log(error)
@@ -46,4 +43,19 @@ export class VehicleProvider {
     )
   }
 
+  searchActiveVehicles(vehicleId){
+    let activeVehicles: Array<string> = []
+    for (let vehicle of this.driverVehicles){
+      if (vehicle.is_active){
+        activeVehicles.push(vehicle)
+      }
+    }
+    let matchingVehicles: Array<string> = []
+    for (let activeVehicle of activeVehicles) {
+      if (activeVehicle['vehicle_type'] == vehicleId){
+        matchingVehicles.push(activeVehicle)
+      }
+    }
+    return matchingVehicles;
+  }
 }

@@ -34,7 +34,7 @@ import { RiderDatePage } from '../pages/rider-date/rider-date';
 import { RiderMapPage } from '../pages/rider-map/rider-map';
 import { Geolocation } from '@ionic-native/geolocation';
 import { RiderDriverlistPage } from '../pages/rider-driverlist/rider-driverlist';
-import { WsCommProvider } from '../providers/ws-comm/ws-comm';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 
 @NgModule({
@@ -99,7 +99,7 @@ import { WsCommProvider } from '../providers/ws-comm/ws-comm';
     TripProvider,
     VehicleProvider,
     Geolocation,
-    WsCommProvider
+    LocalNotifications
   ]
 })
 export class AppModule {}

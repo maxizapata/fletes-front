@@ -10,7 +10,7 @@ export class RequestProvider {
 
   public domain: string = '192.168.0.110:8000';
     
-  set_url(action: string, user_id?, vehicle?: string){
+  setUrl(action: string, user_id?){
     let http = "http://"
     let ws = "ws://"
     let url: string
@@ -18,7 +18,7 @@ export class RequestProvider {
       url = http + this.domain + "/api/auth/login/";
     }
     else if (action === 'ws_connect'){
-      url = ws + this.domain + '/ws/trips/' + user_id + '/' + vehicle + '/'
+      url = ws + this.domain + '/ws/trips/' + user_id + '/';
     }
     else if (action === 'signup'){
       console.log('request.ts signup')
@@ -46,7 +46,7 @@ export class RequestProvider {
   }
 
   public requestsPost(action: string, headers: any, data){
-    let url = this.set_url(action)
+    let url = this.setUrl(action)
     return new Promise((resolve, reject) =>{
       const httpOptions = {
         headers: new HttpHeaders(headers)
@@ -62,7 +62,7 @@ export class RequestProvider {
   }
 
   resquestGet(action, headers){
-    let url = this.set_url(action)
+    let url = this.setUrl(action)
     const httpOptions = {
       headers: new HttpHeaders(headers)
     };
@@ -70,7 +70,7 @@ export class RequestProvider {
   }
 
   public requestsPatch(action: string, headers: any, data){
-    let url = this.set_url(action)
+    let url = this.setUrl(action)
     return new Promise((resolve, reject) =>{
       const httpOptions = {
         headers: new HttpHeaders(headers)

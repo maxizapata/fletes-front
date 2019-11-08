@@ -1,41 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as Rx from "rxjs/Rx";
-import { WebSocketSubject } from 'rxjs/webSocket';
-import { Observable, Subject } from 'rxjs';
-import { RequestProvider } from '../request/request';
-import { map, share } from 'rxjs/operators';
-import { UserProvider } from '../user/user';
+import { Observable, Subject } from "rxjs/Rx";
+
 
 export interface Message {
-  author: string;
-  message: string;
+  data: any
 }
-
 
 @Injectable()
 export class WebsocketProvider {
+  constructor(public http: HttpClient) {}
 
-  constructor(public http: HttpClient,
-              public request: RequestProvider,
-              public user: UserProvider) {}
-
-  webSocket: WebSocketSubject<any>;
-  webSocketReceive: WebSocket
-  messages: Observable<any>; 
+  public messages: Subject<Message>;
 
   private subject: Rx.Subject<MessageEvent>;
-
-  /*
-  public connect(url): Rx.Subject<MessageEvent> {
-    if (!this.subject) {
-      this.subject = this.create(url);
-      console.log("Successfully connected: " + url);
-    }
-    return this.subject;
-  }
-  */
-
+  
   public connect(url): Rx.Subject<MessageEvent> {
     if (!this.subject) {
       this.subject = this.create(url);
@@ -44,9 +24,19 @@ export class WebsocketProvider {
     return this.subject;
   }
 
+  wsConnect(url) {
+    this.messages = <Subject<Message>>this.connect(url).map(
+      (response: MessageEvent): Message => {
+        let data = JSON.parse(response.data);
+        return data
+      }
+    );
+  }
 
   private create(url): Rx.Subject<MessageEvent> {
     let ws = new WebSocket(url);
+    console.log(url)
+    console.log(ws)
 
     let observable = Rx.Observable.create((obs: Rx.Observer<MessageEvent>) => {
       ws.onmessage = obs.next.bind(obs);
@@ -63,16 +53,4 @@ export class WebsocketProvider {
     };
     return Rx.Subject.create(observer, observable);
   }
-
-  receiveMessages(url) {
-    this.messages = <Subject<Message>>this.connect(url).map(
-      (response: MessageEvent): Message => {
-        let data = JSON.parse(response.data);
-        return {
-          author: data.author,
-          message: data.message
-          };
-        });
-  }
-
 }

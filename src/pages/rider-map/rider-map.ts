@@ -25,6 +25,7 @@ export class RiderMapPage {
   ionViewDidLoad(){
     console.log('cargando mapa');
     this.getPosition()
+    console.log(this.trip.vehicle)
   }
 
    getPosition(){
@@ -79,6 +80,7 @@ export class RiderMapPage {
       hour: this.trip.hour,
       pick_up: this.trip.pick_up,
       drop_off: this.trip.drop_off,
+      vehicle: this.trip.vehicle
       })
     this.navCtrl.push(RiderDriverlistPage)
   }

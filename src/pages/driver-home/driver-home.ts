@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { VehicleProvider } from '../../providers/vehicle/vehicle'
 import { DriverAddVehiclePage } from '../driver-add-vehicle/driver-add-vehicle';
-import { WsCommProvider } from '../../providers/ws-comm/ws-comm'
 import { TripProvider } from '../../providers/trip/trip';
-import { WebsocketProvider } from '../../providers/websocket/websocket'
+import { WebsocketProvider } from '../../providers/websocket/websocket';
+import { RequestProvider } from '../../providers/request/request';
+import { UserProvider } from '../../providers/user/user';
+import { ControllerProvider } from '../../providers/controller/controller';
 
 
 @IonicPage()
@@ -17,19 +19,24 @@ export class DriverHomePage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public vehicles: VehicleProvider,
-    public wsComm: WsCommProvider,
     public trip: TripProvider,
-    public ws: WebsocketProvider) {
-      wsComm.messages.subscribe(msg => {
-        console.log("Response for websocket " + msg);
-      });
-    }
+    public ws: WebsocketProvider,
+    public request: RequestProvider,
+    public user: UserProvider,
+    public controller: ControllerProvider) {}
 
+  wsIsOff: Boolean = true
   map: any;
-  driverStatus: string = 'Conductor Desactivado';
-  driverSwitch: boolean;
-  //ws: WebSocket;
-  selected_vehicle: true;
+  currentWsConn: WebSocket;
+
+  private message = {
+    author: "Cualquier autor",
+    message: "Esto es un mensaje de prueba"
+  };
+
+  ionViewDidLoad(){
+    this.ws.wsConnect(this.request.setUrl('ws_connect', this.user.id))
+  }
   
   check_vehicles(){
     if (this.vehicles.driverVehicles){
@@ -37,32 +44,6 @@ export class DriverHomePage {
     } else {
       return false;
     }
-  }
-
-  go_add_vehicle(){
-    this.navCtrl.push(DriverAddVehiclePage);
-  }
-
-  private message = {
-    author: "Cualquier autor",
-    message: "Esto es un mensaje de prueba"
-  };
-
-  sendMsg(){
-    console.log("New message from client to websocket: " + this.message);
-    this.wsComm.messages.next(this.message);
-    this.message.message = "";
-  }
-
-  vehicleStatus(vehicle:any){
-    if (vehicle.is_active == true){
-      console.log('Conectando vehiculo al websocket');
-      this.trip.connect(vehicle.vehicle_type);
-    }
-    else if (vehicle.is_active == false){
-      console.log('Desconectando vehicle al websocket');
-      this.trip.disconnect();
-    }    
   }
 
   distance(lat1, lon1, lat2, lon2, unit) {
@@ -86,7 +67,39 @@ export class DriverHomePage {
       return dist;
     }
   }
-  
-  
+
+
+  go_add_vehicle(){
+    this.navCtrl.push(DriverAddVehiclePage);
+  }
+
+  sendMsg(){
+    console.log("New message from client to websocket: " + this.message);
+    //this.ws.messages.next(this.message);
+    //this.message.message = "";
+  }
+
+  tripEvent(){
+    this.ws.messages.subscribe(trip_data => {
+      let activeVehicles: Array<string> = []
+      activeVehicles = this.vehicles.searchActiveVehicles(trip_data['vehicle'])
+      console.log(activeVehicles)
+      if (activeVehicles.length === 0){
+        console.log('No coincide ningún vehiculo activo con el viaje')
+      } else if (activeVehicles.length === 1){
+        console.log('Tienes un vehiculo activo del tipo')
+        console.log(trip_data)
+      } 
+    });
+  }
+
+  vehicleStatus(vehicle:any){
+    if (this.wsIsOff){
+      this.tripEvent();
+      this.wsIsOff = false;
+      console.log('Ws ON');
+    }
+    console.log(this.wsIsOff)
+  }
 
 }
