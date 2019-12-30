@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>driver price</ion-title>
+  </ion-navbar>
+</ion-header>
+  
+<ion-content class="backgroud-purple">
+  <h2>¿Cuanto cuesta la hora de tu servicio?</h2>
+  <form (submit)="sendPrice()">
+    <ion-item class="form">
+      <ion-input [(ngModel)]="price" name="price" type="number"></ion-input>
+    </ion-item>
+    <ion-footer no-shadow no-border padding>
+      <button ion-fab type="Enviar" color="secondary" class="rigth-button" *ngIf="price; else button_disable"><ion-icon name="checkmark"></ion-icon></button>
+      <ng-template #button_disable>
+        <button ion-fab type="Enviar" color="secondary" class="rigth-button" [disabled]="!isenabled"><ion-icon name="checkmark"></ion-icon></button>
+      </ng-template>        
+    </ion-footer>      
+  </form>
+</ion-content>
+  

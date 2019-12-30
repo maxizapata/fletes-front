@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>FUB</ion-title>
+  </ion-navbar>
+</ion-header>  
+<ion-content class="backgroud-purple">
+<p>Detalles del viaje</p>
+<ion-item class="backgroud-purple">
+    <p>Desde: {{ trip.tripDetail.pick_up }}</p>
+    <p>Hasta: {{ trip.tripDetail.drop_off }}</p>
+    <p>Fecha: {{ trip.tripDetail.date }}</p>     
+    <p>Vehiculo: {{ trip.tripDetail.vehicle_name }}</p>
+</ion-item>
+
+<ion-footer no-shadow no-border padding>
+  <button ion-button block color="secondary" (click)="goDriverPrice()">Aplicar para este viaje</button>
+</ion-footer>
+
+
+</ion-content>
+  

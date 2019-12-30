@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>rider-trips</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="backgroud-purple">
+  <p>Filtrar por:</p>
+  <ion-select [(ngModel)]="tripFilter" name="group" cancelText="Cancelar" (ionChange)="tripFilterFun()" multiple="false">
+    <ion-option value="REQUESTED">Pendientes</ion-option>
+    <ion-option value="PROGRAMED">Programados</ion-option>
+    <ion-option value="IN_PROGRESS">En curso</ion-option>
+    <ion-option value="COMPLETED">Completados</ion-option>
+  </ion-select>
+
+  <!-- IN PROGRESS -->
+  <ion-item *ngIf="tripFilter==='IN_PROGRESS'" class="backgroud-purple">
+    <ion-list *ngIf="driver.myProgramedTrips.length!==0; else no_trips">
+      <button ion-item class="backgroud-purple" *ngFor="let trip of driver.myProgramedTrips" (click)="goTripDetail(trip)">
+        <ion-thumbnail item-start>
+          <img src="{{ trip.vehicle_img }}">
+        </ion-thumbnail>
+        <p>Fecha: {{ trip.data }}</p>
+        <p>Desde: {{ trip.pick_up }}</p>
+        <p>Hasta: {{ trip.drop_off }}</p>
+      </button>
+    </ion-list>
+    <ng-template #no_trips>
+      <p>No tienes viajes en curso</p>
+    </ng-template>
+  </ion-item>
+
+  <!-- REQUESTED -->
+  <ion-item *ngIf="tripFilter==='REQUESTED'" class="backgroud-purple">
+    <ion-list *ngIf="driver.myRequestedTrips.length!==0; else no_trips">
+      <p>Estos viajes aún no tienen conductor,<br>es tu oportunidad</p>
+      <button ion-item class="backgroud-purple" *ngFor="let trip of driver.myRequestedTrips" (click)="goTripDetail(trip)">
+        <ion-thumbnail item-start>
+          <img src="{{ trip.vehicle_img }}">
+        </ion-thumbnail>
+        <p>Fecha: {{ trip.data }}</p>
+        <p>Desde: {{ trip.pick_up }}</p>
+        <p>Hasta: {{ trip.drop_off }}</p>
+      </button>
+    </ion-list>
+    <ng-template #no_trips>
+      <p>No tienes viajes esperando condcutor</p>
+    </ng-template>
+  </ion-item>
+
+  <!-- PROGRAMED -->
+  <ion-item *ngIf="tripFilter==='PROGRAMED'" class="backgroud-purple">
+    <ion-list *ngIf="driver.myProgramedTrips.length!==0; else no_trips">
+      <button ion-item class="backgroud-purple" *ngFor="let trip of driver.myProgramedTrips" (click)="goTripDetail(trip)">
+        <ion-thumbnail item-start>
+          <img src="{{ trip.vehicle_img }}">
+        </ion-thumbnail>
+        <p>Fecha: {{ trip.data }}</p>
+        <p>Desde: {{ trip.pick_up }}</p>
+        <p>Hasta: {{ trip.drop_off }}</p>
+      </button>
+    </ion-list>
+    <ng-template #no_trips>
+      <p>No tienes viajes programados</p>
+    </ng-template>
+  </ion-item>
+
+  <!-- COMPLETED -->
+  <ion-item *ngIf="tripFilter==='COMPLETED'" class="backgroud-purple">
+    <ion-list *ngIf="driver.myCompletedTrips.length!==0; else no_trips">
+      <button ion-item class="backgroud-purple" *ngFor="let trip of driver.myCompletedTrips" (click)="goTripDetail(trip)">
+        <ion-thumbnail item-start>
+          <img src="{{ trip.vehicle_img }}">
+        </ion-thumbnail>
+        <p>Fecha: {{ trip.data }}</p>
+        <p>Desde: {{ trip.pick_up }}</p>
+        <p>Hasta: {{ trip.drop_off }}</p>
+      </button>
+    </ion-list>
+    <ng-template #no_trips>
+      <p>No tienes viajes completados</p>
+    </ng-template>
+  </ion-item>
+</ion-content>

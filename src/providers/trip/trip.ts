@@ -23,7 +23,7 @@ export class TripProvider {
   id: string
   pick_up: string
   drop_off: string
-  uuid: string
+  uuid: any
   driver: string
   rider: string
   create_at: string
@@ -33,6 +33,8 @@ export class TripProvider {
   vehicle_name: string
   date: string
   hour: string
+  // ####################
+  tripDetail: any;
 
   connect(vehicle): void{
     if (!this.webSocket || this.webSocket.complete){
@@ -51,14 +53,15 @@ export class TripProvider {
       token: this.user.token,
       data: data
     };
+    console.log('Enviando msj a websocket')
     this.webSocket.next(message);
   }
 
-
-  disconnect(){
-    console.log('Notice: Disconnect function')
-    this.webSocket.complete()
+  getTripInformation(){
+    this.request.resquestGet('trip_detail', this.request.headers)
+    .subscribe((data) => {
+      return data;
+    })
   }
-
 
 }

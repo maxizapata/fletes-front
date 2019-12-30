@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserProvider } from '../../providers/user/user';
 import { RiderVehiclePage } from '../rider-vehicle/rider-vehicle';
 import { VehicleProvider } from '../../providers/vehicle/vehicle';
+import { RiderTripsPage } from '../rider-trips/rider-trips';
 
 
 @IonicPage()
@@ -23,8 +24,8 @@ export class RiderHomePage {
     this.navCtrl.push(RiderVehiclePage)
   }
 
-  historyTrip(){
-    console.log('history trip')
+  myTrips(){
+    this.navCtrl.push(RiderTripsPage)
   }
 
 

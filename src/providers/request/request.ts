@@ -1,14 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { TripProvider } from '../trip/trip';
 
 @Injectable()
 export class RequestProvider {
 
-  constructor(
-    public http: HttpClient,
-    ) {}
+  constructor(public http: HttpClient) {}
 
-  public domain: string = '192.168.0.110:8000';
+  public domain: string = '192.168.0.90:8000';
+  public headers = {'Content-Type':  'application/json', 'Authorization': 'Token ' + window.localStorage.getItem('token')};
     
   setUrl(action: string, user_id?){
     let http = "http://"
@@ -20,18 +20,26 @@ export class RequestProvider {
     else if (action === 'ws_connect'){
       url = ws + this.domain + '/ws/trips/' + user_id + '/';
     }
+    else if (action === 'requested_trips'){
+      url = http + this.domain + '/api/trips/driver-trips/';
+    }
+    else if (action === 'trip_detail'){
+      url = http + this.domain + '/api/trips/detail/';
+    }
+    else if (action === 'send_price'){
+      url = http + this.domain + '/api/trips/trip-price/';
+    }
     else if (action === 'signup'){
-      console.log('request.ts signup')
       url = http + this.domain + "/api/auth/signup/";
     }
     else if (action === 'user_info'){
-      url = http + this.domain + "/api/auth/user_info/";
+      url = http + this.domain + "/api/auth/user-info/";
     }
     else if (action === 'list_vehicles'){
       url = http + this.domain + "/api/trips/vehicle-list/"
     }
     else if (action === 'driver_vehicles'){
-      url = http + this.domain + "/api/trips/user-vehicles/";
+      url = http + this.domain + "/api/trips/driver-vehicles/";
     }
     else if (action === 'add_vehicle'){
       url = http + this.domain + "/api/trips/create-vehicle/";
@@ -47,6 +55,7 @@ export class RequestProvider {
 
   public requestsPost(action: string, headers: any, data){
     let url = this.setUrl(action)
+    console.log('La url es ' + url)
     return new Promise((resolve, reject) =>{
       const httpOptions = {
         headers: new HttpHeaders(headers)

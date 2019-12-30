@@ -1,18 +1,18 @@
 <ion-header>
-  <ion-navbar color="dark">
-    <ion-title>FUB</ion-title>
-  </ion-navbar>
-</ion-header>  
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Menú cliente</ion-title>
+    </ion-navbar>
+  </ion-header>
+   
 <ion-content class="backgroud-purple">
 <p>Hola {{ user.first_name }} {{ user.last_name }}</p>
 
 
-<!-- FOOTER -->
 <ion-footer no-shadow no-border padding>
   <button ion-button block color="secondary" (click)="createTrip()">Pedir un servicio</button>
-  <button ion-button block color="secondary" (click)="historyTrip()">Historial</button>
+  <button ion-button block color="secondary" (click)="myTrips()">Mis viajes</button>
 </ion-footer> 
-<!-- FOOTER -->
-
 </ion-content>
-  

@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LogoutPage } from '../pages/logout/logout';
 
 import { LoadPage } from '../pages/load/load';
 
@@ -20,7 +21,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: LoadPage },
+      { title: 'Cerrar sesión', component: LogoutPage },
       //{ title: 'List', component: ListPage }
     ];
 

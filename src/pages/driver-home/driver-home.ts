@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController, IonicPage, NavController, NavParams, ModalController, Modal } from 'ionic-angular';
 import { VehicleProvider } from '../../providers/vehicle/vehicle'
 import { DriverAddVehiclePage } from '../driver-add-vehicle/driver-add-vehicle';
 import { TripProvider } from '../../providers/trip/trip';
@@ -7,6 +7,10 @@ import { WebsocketProvider } from '../../providers/websocket/websocket';
 import { RequestProvider } from '../../providers/request/request';
 import { UserProvider } from '../../providers/user/user';
 import { ControllerProvider } from '../../providers/controller/controller';
+import { DriverTripDetailsPage } from '../driver-trip-details/driver-trip-details';
+import { DriverProvider } from '../../providers/driver/driver';
+import { DriverTripsPage } from '../driver-trips/driver-trips'
+import { DriverAlertPage } from '../driver-alert/driver-alert';
 
 
 @IonicPage()
@@ -16,6 +20,8 @@ import { ControllerProvider } from '../../providers/controller/controller';
 })
 export class DriverHomePage {
   constructor(
+    public alertCrtl: AlertController,
+    public modalCrtl: ModalController,
     public navCtrl: NavController, 
     public navParams: NavParams,
     public vehicles: VehicleProvider,
@@ -23,11 +29,13 @@ export class DriverHomePage {
     public ws: WebsocketProvider,
     public request: RequestProvider,
     public user: UserProvider,
-    public controller: ControllerProvider) {}
+    public controller: ControllerProvider,
+    public driver: DriverProvider) {}
 
-  wsIsOff: Boolean = true
-  map: any;
+  alertPresent: boolean = false
   currentWsConn: WebSocket;
+  map: any;
+  wsIsOff: Boolean = true
 
   private message = {
     author: "Cualquier autor",
@@ -38,8 +46,8 @@ export class DriverHomePage {
     this.ws.wsConnect(this.request.setUrl('ws_connect', this.user.id))
   }
   
-  check_vehicles(){
-    if (this.vehicles.driverVehicles){
+  checkVehicles(){
+    if (this.driver.myVehicles){
       return true;
     } else {
       return false;
@@ -68,9 +76,16 @@ export class DriverHomePage {
     }
   }
 
-
-  go_add_vehicle(){
+  goAddVehicle(){
     this.navCtrl.push(DriverAddVehiclePage);
+  }
+
+  goDriverTrips(){
+    this.navCtrl.push(DriverTripsPage)
+  }
+
+  goTripDetails(){
+    this.navCtrl.push(DriverTripDetailsPage)
   }
 
   sendMsg(){
@@ -80,17 +95,64 @@ export class DriverHomePage {
   }
 
   tripEvent(){
+    console.log('New trip event')
     this.ws.messages.subscribe(trip_data => {
+      console.log('Estamos suscritos')
+      this.trip.id = trip_data['id']
+      this.trip.pick_up = trip_data['pick_up']
+      this.trip.drop_off = trip_data['drop_off']
+      this.trip.uuid = trip_data['uuid']
+      this.trip.rider = trip_data['rider']
+      this.trip.create_at = trip_data['create_at']
+      this.trip.status = trip_data['status']
+      this.trip.vehicle = trip_data['vehicle']
+      this.trip.date = trip_data['data']
+
       let activeVehicles: Array<string> = []
-      activeVehicles = this.vehicles.searchActiveVehicles(trip_data['vehicle'])
-      console.log(activeVehicles)
+      activeVehicles = this.driver.searchActiveVehicles(trip_data['vehicle'])
       if (activeVehicles.length === 0){
-        console.log('No coincide ningún vehiculo activo con el viaje')
-      } else if (activeVehicles.length === 1){
-        console.log('Tienes un vehiculo activo del tipo')
-        console.log(trip_data)
+        console.log('No hay vehiculos activos')
+      } 
+      else {
+        this.driver.myRequestedTrips.push(trip_data)
+        let alert = this.modalCrtl.create(DriverAlertPage, { activeVehicles: activeVehicles})
+        // this.tripAlert(trip_data['pick_up'], trip_data['drop_off'], trip_data['datetime'])
+        alert.present();
       } 
     });
+  }
+
+  tripAlert(pick_up, drop_off, datetime) {
+    console.log('Trip Alert')
+    if (!this.alertPresent){
+      this.alertPresent = true
+      const confirm = this.alertCrtl.create({
+        title: 'Solicitud de servicio',
+        message: 'Desde: ' + pick_up + '\n' + 
+                 'Hasta: ' + drop_off + '\n' + 
+                 '¿Estas interesado?',
+        buttons: [
+          {
+            text: 'Ahora no',
+            handler: () => {
+              console.log('Disagree clicked');
+            }
+          },
+          {
+            text: 'Ver detalles',
+            handler: () => {
+              this.controller.presentLoading
+              this.navCtrl.push(DriverTripsPage)
+            }
+          }
+        ]
+      });
+      confirm.present();
+      this.alertPresent = false
+    }
+    else {
+      console.log('Alert is Active')
+    }
   }
 
   vehicleStatus(vehicle:any){
@@ -101,5 +163,4 @@ export class DriverHomePage {
     }
     console.log(this.wsIsOff)
   }
-
 }

@@ -9,6 +9,7 @@ import { PhoneValidatePage } from '../phone-validate/phone-validate';
 import { HomePage } from '../home/home';
 import { VehicleProvider } from '../../providers/vehicle/vehicle';
 import { RiderHomePage } from '../rider-home/rider-home';
+import { DriverProvider } from '../../providers/driver/driver'
 
 @IonicPage()
 @Component({
@@ -21,10 +22,14 @@ export class LoadPage {
               public navParams: NavParams,
               public user: UserProvider,
               public controller: ControllerProvider,
-              public vehicles: VehicleProvider) {}
+              public vehicles: VehicleProvider,
+              public driver: DriverProvider) {}
 
   ionViewDidLoad(){
     if (this.user.isAuthenticated()){
+      console.log('usuario autenticado');
+      console.log('El token es:')
+      console.log(window.localStorage.getItem('token'))
       // Si esta autenticado verificamos el grupo
       // para definir a que pagina redireccionar
       this.getGroup()
@@ -59,8 +64,9 @@ export class LoadPage {
 
   driverOrRider(){
     if (this.user.group === 'driver'){
-      this.vehicles.getDriverVehicles();
+      this.driver.getMyVehicles();
       this.vehicles.getListVehicles();
+      this.driver.getDriverTrips();
       this.navCtrl.setRoot(DriverHomePage);
     } else if (this.user.group === 'rider'){
       this.navCtrl.setRoot(RiderHomePage)

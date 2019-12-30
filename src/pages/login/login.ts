@@ -30,7 +30,7 @@ export class LoginPage {
   doLogin() {
     let headers = {'Content-Type':  'application/json'}
     this.controller.presentLoading('Cargando, por favor espere');
-    this.request.requestsPost('login', headers, this.loginData).then((result) => {
+    this.request.requestsPost('login', {'Content-Type':  'application/json'}, this.loginData).then((result) => {
       this.data = result;
       localStorage.setItem('token', this.data.token);
       this.navCtrl.setRoot(LoadPage);
@@ -38,6 +38,7 @@ export class LoginPage {
       this.user.getUserInfo();
     }, (err) => {
       this.controller.dismissLoading();
+      console.log(err)
       this.controller.presentToast('Error de credenciales' + (err));
     });
   }

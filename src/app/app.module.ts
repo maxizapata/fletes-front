@@ -35,6 +35,14 @@ import { RiderMapPage } from '../pages/rider-map/rider-map';
 import { Geolocation } from '@ionic-native/geolocation';
 import { RiderDriverlistPage } from '../pages/rider-driverlist/rider-driverlist';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { LogoutPage } from '../pages/logout/logout';
+import { DriverProvider } from '../providers/driver/driver';
+import { DriverTripsPage } from '../pages/driver-trips/driver-trips';
+import { DriverTripDetailsPage } from '../pages/driver-trip-details/driver-trip-details';
+import { DriverPricePage } from '../pages/driver-price/driver-price';
+import { RiderTripsPage } from '../pages/rider-trips/rider-trips';
+import { RiderProvider } from '../providers/rider/rider';
+import { DriverAlertPage } from '../pages/driver-alert/driver-alert';
 
 
 @NgModule({
@@ -51,13 +59,19 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
     LoadPage,
     DriverHomePage,
     DriverAddVehiclePage,
+    DriverAlertPage,
     InformationPage,
     RiderHomePage,
     RiderPlacesPage,
     RiderVehiclePage,
     RiderDatePage,
     RiderMapPage,
-    RiderDriverlistPage
+    RiderDriverlistPage,
+    LogoutPage,
+    DriverTripsPage,
+    DriverTripDetailsPage,
+    DriverPricePage,
+    RiderTripsPage
   ],
   imports: [
     BrowserModule,
@@ -71,6 +85,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
     LoginPage,
     EmailPage,
     GroupPage,
+    DriverAlertPage,
     PhoneNumberPage,
     NamePage,
     PasswordPage,
@@ -84,7 +99,12 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
     RiderVehiclePage,
     RiderDatePage,
     RiderMapPage,
-    RiderDriverlistPage
+    RiderDriverlistPage,
+    LogoutPage,
+    DriverTripsPage,
+    DriverTripDetailsPage,
+    DriverPricePage,
+    RiderTripsPage
   ],
   providers: [
     StatusBar,
@@ -99,7 +119,11 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
     TripProvider,
     VehicleProvider,
     Geolocation,
-    LocalNotifications
+    LocalNotifications,
+    DriverProvider,
+    RiderTripsPage,
+    RiderProvider,
+    DriverAlertPage,
   ]
 })
 export class AppModule {}

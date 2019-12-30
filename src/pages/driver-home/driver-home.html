@@ -1,12 +1,20 @@
 <ion-header>
-  <ion-navbar color="dark">
-    <ion-title>FUB</ion-title>
-  </ion-navbar>
-</ion-header>  
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Menú condutor</ion-title>
+      <!--<button ion-button menuToggle>
+          <ion-icon name="ios-notifications-outline" item-right></ion-icon>
+        </button>
+      -->
+    </ion-navbar>
+  </ion-header>
+  
 <ion-content class="backgroud-purple">
-<p *ngIf="check_vehicles()">Tus vehiculos</p>
-<ion-list *ngIf="check_vehicles(); else no_vehicles">
-  <ion-item class="backgroud-purple" *ngFor="let vehicle of vehicles.driverVehicles">
+<p *ngIf="checkVehicles()">Tus vehiculos</p>
+<ion-list *ngIf="checkVehicles(); else no_vehicles">
+  <ion-item class="backgroud-purple" *ngFor="let vehicle of driver.myVehicles">
     <ion-toggle float-right [(ngModel)]="vehicle.is_active" color="secondary" checked="false" (ionChange)="vehicleStatus(vehicle)" cancelable=true></ion-toggle>
     <ion-label>
       {{ vehicle.make }} - {{ vehicle.model }}
@@ -18,8 +26,7 @@
   <p padding class="text-title">No tienes vehiculos agregados</p>
 </ng-template>
 <ion-footer no-shadow no-border padding>
-    <button ion-button block color="secondary" (click)="disconnect()">UNS</button>
-  <button ion-button block color="secondary" (click)="go_add_vehicle()">Agregar vehiculo</button>
+    <button ion-button block color="secondary" (click)="goDriverTrips()">Mis viajes</button>
+  <button ion-button block color="secondary" (click)="goAddVehicle()">Agregar vehiculo</button>
 </ion-footer> 
 </ion-content>
-  

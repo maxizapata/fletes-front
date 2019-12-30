@@ -15,7 +15,10 @@ export class ControllerProvider {
 
     private loading: any;
 
+    presentLoadingIsActive: boolean = false
+
     presentLoading(message){
+      this.presentLoadingIsActive = true
       this.loading = this.loadingCtrl.create({
         content: message
       })
@@ -24,7 +27,9 @@ export class ControllerProvider {
     }
   
     dismissLoading(){
-      this.loading.dismiss();
+      if (this.presentLoadingIsActive){
+        this.loading.dismiss();
+      }
     }
   
     presentToast(msg) {
@@ -52,7 +57,7 @@ export class ControllerProvider {
     }
 
 
-  showConfirm(title, message, action) {
+  showConfirm(title, message, action, ok_text, cancel_text) {
     const confirm = this.alertCtrl.create({
       title: title,
       message: message,
@@ -66,7 +71,7 @@ export class ControllerProvider {
         {
           text: 'OK',
           handler: () => {
-            action;
+            action();
           }
         }
       ]
