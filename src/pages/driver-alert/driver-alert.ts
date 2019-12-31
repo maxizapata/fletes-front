@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController,IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import { DriverPricePage } from '../driver-price/driver-price';
+import { DriverMultivehiclePage } from '../driver-multivehicle/driver-multivehicle';
 
 @IonicPage()
 @Component({
@@ -22,13 +23,21 @@ export class DriverAlertPage {
 
   accept(){
     let activeVehicles = this.navParams.get('activeVehicles')
+    
     if (activeVehicles.length === 1) {
-      this.dismiss()
+      console.log('Tiene un vehiculo activo')
       this.navCtrl.setRoot(DriverPricePage)
     }
-    else if (activeVehicles.length < 1){
-
+    else if (activeVehicles.length > 1){
+      console.log('Tiene mas de un vehiculo activo')
+      this.navCtrl.setRoot(DriverMultivehiclePage)
     }
+    else {
+      console.log('Hay algo raro')
+      console.log(activeVehicles.length)
+    }
+    this.dismiss()
+    console.log('Ejecutó el dismiss')
   }
 
   dismiss(){

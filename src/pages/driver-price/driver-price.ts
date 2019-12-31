@@ -32,8 +32,4 @@ export class DriverPricePage {
     this.navCtrl.setRoot(DriverHomePage)
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DriverPricePage');
-  }
-
 }

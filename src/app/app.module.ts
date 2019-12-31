@@ -43,6 +43,7 @@ import { DriverPricePage } from '../pages/driver-price/driver-price';
 import { RiderTripsPage } from '../pages/rider-trips/rider-trips';
 import { RiderProvider } from '../providers/rider/rider';
 import { DriverAlertPage } from '../pages/driver-alert/driver-alert';
+import { DriverMultivehiclePage } from '../pages/driver-multivehicle/driver-multivehicle'
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { DriverAlertPage } from '../pages/driver-alert/driver-alert';
     DriverTripsPage,
     DriverTripDetailsPage,
     DriverPricePage,
-    RiderTripsPage
+    RiderTripsPage,
+    DriverMultivehiclePage
   ],
   imports: [
     BrowserModule,
@@ -104,7 +106,8 @@ import { DriverAlertPage } from '../pages/driver-alert/driver-alert';
     DriverTripsPage,
     DriverTripDetailsPage,
     DriverPricePage,
-    RiderTripsPage
+    RiderTripsPage,
+    DriverMultivehiclePage
   ],
   providers: [
     StatusBar,
@@ -124,6 +127,7 @@ import { DriverAlertPage } from '../pages/driver-alert/driver-alert';
     RiderTripsPage,
     RiderProvider,
     DriverAlertPage,
+    DriverMultivehiclePage
   ]
 })
 export class AppModule {}

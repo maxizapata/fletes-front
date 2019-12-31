@@ -7,7 +7,7 @@ export class RequestProvider {
 
   constructor(public http: HttpClient) {}
 
-  public domain: string = '192.168.0.90:8000';
+  public domain: string = '192.168.0.19:8888';
   public headers = {'Content-Type':  'application/json', 'Authorization': 'Token ' + window.localStorage.getItem('token')};
     
   setUrl(action: string, user_id?){
