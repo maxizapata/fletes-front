@@ -11,12 +11,15 @@ import { UserProvider } from '../../providers/user/user'
   templateUrl: 'driver-price.html',
 })
 export class DriverPricePage {
-
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public request: RequestProvider,
               public trip: TripProvider,
               public user: UserProvider) {
+  }
+
+  ionViewDidLoad(){
+    console.log(this.trip.rider_channel)
   }
 
   price: string;
@@ -25,9 +28,9 @@ export class DriverPricePage {
     let headers = this.request.getHeaders()
     let data = {'price': this.price, 
                 'trip': this.trip.id,
+                'rider_channel': this.trip.rider_channel,
                 'driver': this.user.id
               }
-    // this.request.requestsPost('send_price', headers, data)
     this.trip.send('send_price', data)
     this.navCtrl.setRoot(DriverHomePage)
   }

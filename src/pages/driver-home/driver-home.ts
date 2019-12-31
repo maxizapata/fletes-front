@@ -12,7 +12,6 @@ import { DriverProvider } from '../../providers/driver/driver';
 import { DriverTripsPage } from '../driver-trips/driver-trips'
 import { DriverAlertPage } from '../driver-alert/driver-alert';
 
-
 @IonicPage()
 @Component({
   selector: 'page-driver-home',
@@ -97,12 +96,12 @@ export class DriverHomePage {
   tripEvent(){
     console.log('New trip event')
     this.ws.messages.subscribe(trip_data => {
-      console.log('Estamos suscritos')
       this.trip.id = trip_data['id']
       this.trip.pick_up = trip_data['pick_up']
       this.trip.drop_off = trip_data['drop_off']
       this.trip.uuid = trip_data['uuid']
       this.trip.rider = trip_data['rider']
+      this.trip.rider_channel = trip_data['rider_channel']
       this.trip.create_at = trip_data['create_at']
       this.trip.status = trip_data['status']
       this.trip.vehicle = trip_data['vehicle']

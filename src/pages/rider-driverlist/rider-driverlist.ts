@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { WebsocketProvider } from '../../providers/websocket/websocket';
+import { UserProvider } from '../../providers/user/user';
 
 
 @IonicPage()
@@ -9,14 +10,19 @@ import { WebsocketProvider } from '../../providers/websocket/websocket';
   templateUrl: 'rider-driverlist.html',
 })
 export class RiderDriverlistPage {
-
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
-              public ws: WebsocketProvider,) {}
+              public ws: WebsocketProvider,
+              public user: UserProvider) {}
+
+  available_drivers:  Array<any>
 
   ionViewDidLoad() {
+    console.log(this.available_drivers)
     this.ws.messages.subscribe(trip_data => {
-      console.log('esta funcionando')
+      this.available_drivers.push(trip_data);
+      this.navCtrl.setRoot(RiderDriverlistPage);
+      console.log('se ejecuto');
     });
   }
 
@@ -24,7 +30,4 @@ export class RiderDriverlistPage {
     author: "Cualquier autor",
     message: "Esto es un mensaje de prueba"
   };
-
-
-
 }

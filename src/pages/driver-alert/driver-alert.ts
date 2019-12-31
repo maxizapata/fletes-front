@@ -36,12 +36,10 @@ export class DriverAlertPage {
       console.log('Hay algo raro')
       console.log(activeVehicles.length)
     }
-    this.dismiss()
-    console.log('Ejecutó el dismiss')
   }
 
   dismiss(){
-    this.viewCtrl.dismiss();
+    this.navCtrl.pop()
   }
 
   /*

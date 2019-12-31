@@ -4,6 +4,8 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { UserProvider } from '../../providers/user/user';
 import { TripProvider } from '../../providers/trip/trip';
 import { RiderDriverlistPage } from '../rider-driverlist/rider-driverlist';
+import { RequestProvider } from '../../providers/request/request';
+import { WebsocketProvider } from '../../providers/websocket/websocket';
 declare var google;
 
 @IonicPage()
@@ -20,15 +22,22 @@ export class RiderMapPage {
               public geolocation: Geolocation,
               public user: UserProvider,
               public trip: TripProvider,
+              public request: RequestProvider,
+              public ws: WebsocketProvider
               ) {}
 
   ionViewDidLoad(){
+    this.ws.wsConnect(this.request.setUrl('ws_connect', this.user.id))
     console.log('cargando mapa');
     this.getPosition()
     console.log(this.trip.vehicle)
+    this.ws.messages.subscribe(trip_data => {
+      console.log('se ejecuto')
+      console.log(trip_data)
+    });
   }
 
-   getPosition(){
+  getPosition(){
     this.geolocation.getCurrentPosition().then(response => {
       this.calculateAndDisplayRoute(response.coords.latitude, 
         response.coords.longitude)
@@ -44,7 +53,7 @@ export class RiderMapPage {
       center: {lat: myLat, lng: myLng}
     });
     directionsDisplay.setMap(map);
-    
+
     var pos = {
       lat: myLat,
       lng: myLng,
@@ -82,7 +91,7 @@ export class RiderMapPage {
       drop_off: this.trip.drop_off,
       vehicle: this.trip.vehicle
       })
-    this.navCtrl.push(RiderDriverlistPage)
+
   }
-  
+
 }

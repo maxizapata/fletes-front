@@ -26,6 +26,7 @@ export class TripProvider {
   uuid: any
   driver: string
   rider: string
+  rider_channel: string
   create_at: string
   update_at: string
   status: string
@@ -63,5 +64,4 @@ export class TripProvider {
       return data;
     })
   }
-
 }
