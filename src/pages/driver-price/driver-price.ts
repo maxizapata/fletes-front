@@ -3,7 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RequestProvider } from '../../providers/request/request';
 import { TripProvider } from '../../providers/trip/trip';
 import { DriverHomePage } from '../driver-home/driver-home';
-import { UserProvider } from '../../providers/user/user'
+import { UserProvider } from '../../providers/user/user';
+import { WebsocketProvider } from '../../providers/websocket/websocket';
 
 @IonicPage()
 @Component({
@@ -15,11 +16,8 @@ export class DriverPricePage {
               public navParams: NavParams,
               public request: RequestProvider,
               public trip: TripProvider,
-              public user: UserProvider) {
-  }
-
-  ionViewDidLoad(){
-    console.log(this.trip.rider_channel)
+              public user: UserProvider,
+              public ws: WebsocketProvider) {
   }
 
   price: string;
@@ -31,7 +29,7 @@ export class DriverPricePage {
                 'rider_channel': this.trip.rider_channel,
                 'driver': this.user.id
               }
-    this.trip.send('send_price', data)
+    this.ws.sendMsg('send_price', data, this.trip.vehicle)
     this.navCtrl.setRoot(DriverHomePage)
   }
 

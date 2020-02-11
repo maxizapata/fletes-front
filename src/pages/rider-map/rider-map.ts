@@ -27,14 +27,9 @@ export class RiderMapPage {
               ) {}
 
   ionViewDidLoad(){
-    this.ws.wsConnect(this.request.setUrl('ws_connect', this.user.id))
     console.log('cargando mapa');
     this.getPosition()
     console.log(this.trip.vehicle)
-    this.ws.messages.subscribe(trip_data => {
-      console.log('se ejecuto')
-      console.log(trip_data)
-    });
   }
 
   getPosition(){
@@ -82,7 +77,7 @@ export class RiderMapPage {
   }
 
   createTrip(){
-    this.trip.send(
+    this.ws.sendMsg(
       'create_trip',
       {
       date: this.trip.date,
@@ -90,8 +85,9 @@ export class RiderMapPage {
       pick_up: this.trip.pick_up,
       drop_off: this.trip.drop_off,
       vehicle: this.trip.vehicle
-      })
-
+      }, 
+      this.trip.vehicle)
+    this.navCtrl.setRoot(RiderDriverlistPage);
   }
 
 }

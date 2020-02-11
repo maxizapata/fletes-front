@@ -41,9 +41,9 @@ export class DriverHomePage {
     message: "Esto es un mensaje de prueba"
   };
 
-  ionViewDidLoad(){
-    this.ws.wsConnect(this.request.setUrl('ws_connect', this.user.id))
-  }
+  //ionViewDidLoad(){
+  //  console.log('Cargo ion view did load')
+  //}
   
   checkVehicles(){
     if (this.driver.myVehicles){
@@ -93,34 +93,53 @@ export class DriverHomePage {
     //this.message.message = "";
   }
 
-  tripEvent(){
-    console.log('New trip event')
-    this.ws.messages.subscribe(trip_data => {
-      this.trip.id = trip_data['id']
-      this.trip.pick_up = trip_data['pick_up']
-      this.trip.drop_off = trip_data['drop_off']
-      this.trip.uuid = trip_data['uuid']
-      this.trip.rider = trip_data['rider']
-      this.trip.rider_channel = trip_data['rider_channel']
-      this.trip.create_at = trip_data['create_at']
-      this.trip.status = trip_data['status']
-      this.trip.vehicle = trip_data['vehicle']
-      this.trip.date = trip_data['data']
-
-      let activeVehicles: Array<string> = []
-      activeVehicles = this.driver.searchActiveVehicles(trip_data['vehicle'])
-      if (activeVehicles.length === 0){
-        console.log('No hay vehiculos activos')
-      } 
-      else {
-        this.driver.myRequestedTrips.push(trip_data)
-        let alert = this.modalCrtl.create(DriverAlertPage, { activeVehicles: activeVehicles})
-        // this.tripAlert(trip_data['pick_up'], trip_data['drop_off'], trip_data['datetime'])
-        alert.present();
-      } 
-    });
+  wsConnect(){
+    this.ws.webSocket.subscribe(trip_data => {
+      if (trip_data['message_type'] === 'available_drivers'){
+        this.newTrip(trip_data)
+      } else {
+        console.log('Ahora estamos en otro peo')
+        console.log(trip_data['message_type'])
+      }
+    },
+    err => this.errorReload());
   }
 
+  newTrip(trip_data){
+    this.trip.id = trip_data['id']
+    this.trip.pick_up = trip_data['pick_up']
+    this.trip.drop_off = trip_data['drop_off']
+    this.trip.uuid = trip_data['uuid']
+    this.trip.rider = trip_data['rider']
+    this.trip.rider_channel = trip_data['rider_channel']
+    this.trip.create_at = trip_data['create_at']
+    this.trip.status = trip_data['status']
+    this.trip.vehicle = trip_data['vehicle']
+    this.trip.date = trip_data['data']
+    let activeVehicles: Array<string> = []
+    activeVehicles = this.driver.searchActiveVehicles(trip_data['vehicle'])
+    if (activeVehicles.length === 0){
+      console.log('No hay vehiculos activos')
+    } 
+    else {
+      this.driver.myRequestedTrips.push(trip_data)
+      let alert = this.modalCrtl.create(DriverAlertPage, { activeVehicles: activeVehicles})
+      alert.present();
+    } 
+  }
+
+  errorReload(){
+    console.log('ERROR DE CONEXION')
+    let alert = this.alertCrtl.create({
+      title: 'Error',
+      subTitle: 'ERRORONES',
+      buttons: ['Recargar']
+    })
+    alert.present();
+    this.navCtrl.setRoot(DriverHomePage)
+  }
+
+  /*
   tripAlert(pick_up, drop_off, datetime) {
     console.log('Trip Alert')
     if (!this.alertPresent){
@@ -153,7 +172,6 @@ export class DriverHomePage {
       console.log('Alert is Active')
     }
   }
-
   vehicleStatus(vehicle:any){
     if (this.wsIsOff){
       this.tripEvent();
@@ -162,4 +180,5 @@ export class DriverHomePage {
     }
     console.log(this.wsIsOff)
   }
+  */
 }

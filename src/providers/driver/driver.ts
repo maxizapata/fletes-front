@@ -11,7 +11,7 @@ export class DriverProvider {
               public request: RequestProvider,
               public controller: ControllerProvider,
               public vehicle: VehicleProvider) {}
-
+        
   myRequestedTrips: any = []
   myProgramedTrips: any = []
   myCompletedTrips: any = []

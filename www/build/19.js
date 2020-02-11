@@ -1,14 +1,14 @@
 webpackJsonp([19],{
 
-/***/ 731:
+/***/ 492:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DriverTripDetailsPageModule", function() { return DriverTripDetailsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InformationPageModule", function() { return InformationPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__driver_trip_details__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__information__ = __webpack_require__(177);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DriverTripDetailsPageModule = /** @class */ (function () {
-    function DriverTripDetailsPageModule() {
+var InformationPageModule = /** @class */ (function () {
+    function InformationPageModule() {
     }
-    DriverTripDetailsPageModule = __decorate([
+    InformationPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__driver_trip_details__["a" /* DriverTripDetailsPage */],
+                __WEBPACK_IMPORTED_MODULE_2__information__["a" /* InformationPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__driver_trip_details__["a" /* DriverTripDetailsPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__information__["a" /* InformationPage */]),
             ],
         })
-    ], DriverTripDetailsPageModule);
-    return DriverTripDetailsPageModule;
+    ], InformationPageModule);
+    return InformationPageModule;
 }());
 
-//# sourceMappingURL=driver-trip-details.module.js.map
+//# sourceMappingURL=information.module.js.map
 
 /***/ })
 

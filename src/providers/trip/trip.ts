@@ -25,6 +25,7 @@ export class TripProvider {
   drop_off: string
   uuid: any
   driver: string
+  driver_channel: string
   rider: string
   rider_channel: string
   create_at: string
@@ -34,29 +35,11 @@ export class TripProvider {
   vehicle_name: string
   date: string
   hour: string
+  price: number
   // ####################
   tripDetail: any;
 
-  connect(vehicle): void{
-    if (!this.webSocket || this.webSocket.complete){
-      this.webSocket = new WebSocketSubject(this.request.setUrl('ws_connect', this.user.id));
-      this.messages = this.webSocket.pipe(share());
-      this.messages.subscribe(message => console.log(message))
-    }
-  }
-
-  send(action, data?): void {
-    this.connect(this.vehicle);
-    const message: any = {
-      action: action,
-      veh_type: this.vehicle,
-      user_id: this.user.id,
-      token: this.user.token,
-      data: data
-    };
-    console.log('Enviando msj a websocket')
-    this.webSocket.next(message);
-  }
+  available_drivers:  Array<any> = []
 
   getTripInformation(){
     this.request.resquestGet('trip_detail', this.request.headers)

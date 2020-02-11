@@ -15,7 +15,7 @@
 <p *ngIf="checkVehicles()">Tus vehiculos</p>
 <ion-list *ngIf="checkVehicles(); else no_vehicles">
   <ion-item class="backgroud-purple" *ngFor="let vehicle of driver.myVehicles">
-    <ion-toggle float-right [(ngModel)]="vehicle.is_active" color="secondary" checked="false" (ionChange)="vehicleStatus(vehicle)" cancelable=true></ion-toggle>
+    <ion-toggle float-right [(ngModel)]="vehicle.is_active" color="secondary" checked="false" cancelable=true></ion-toggle> <!-- (ionChange)="vehicleStatus(vehicle)" -->
     <ion-label>
       {{ vehicle.make }} - {{ vehicle.model }}
     </ion-label> 
@@ -26,7 +26,7 @@
   <p padding class="text-title">No tienes vehiculos agregados</p>
 </ng-template>
 <ion-footer no-shadow no-border padding>
-    <button ion-button block color="secondary" (click)="goDriverTrips()">Mis viajes</button>
+  <button ion-button block color="secondary" (click)="goDriverTrips()">Mis viajes</button>
   <button ion-button block color="secondary" (click)="goAddVehicle()">Agregar vehiculo</button>
 </ion-footer> 
 </ion-content>

@@ -5,5 +5,14 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-item class="backgroud-purple">
+    <ion-list *ngIf="trip.available_drivers.length!==0; else no_trips">
+      <button ion-item class="backgroud-purple" *ngFor="let driver of trip.available_drivers" (click)="selectDriver(driver)">
+        <p>{{driver.price}}</p>
+      </button>
+    </ion-list>
+    <ng-template #no_trips class="backgroud-purple">
+      <p>En espera por conductores</p>
+    </ng-template>
+  </ion-item>
 </ion-content>

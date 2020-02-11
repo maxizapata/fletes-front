@@ -1,14 +1,14 @@
 webpackJsonp([13],{
 
-/***/ 737:
+/***/ 498:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PhoneNumberPageModule", function() { return PhoneNumberPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RiderDatePageModule", function() { return RiderDatePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__phone_number__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rider_date__ = __webpack_require__(170);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var PhoneNumberPageModule = /** @class */ (function () {
-    function PhoneNumberPageModule() {
+var RiderDatePageModule = /** @class */ (function () {
+    function RiderDatePageModule() {
     }
-    PhoneNumberPageModule = __decorate([
+    RiderDatePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__phone_number__["a" /* PhoneNumberPage */],
+                __WEBPACK_IMPORTED_MODULE_2__rider_date__["a" /* RiderDatePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__phone_number__["a" /* PhoneNumberPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__rider_date__["a" /* RiderDatePage */]),
             ],
         })
-    ], PhoneNumberPageModule);
-    return PhoneNumberPageModule;
+    ], RiderDatePageModule);
+    return RiderDatePageModule;
 }());
 
-//# sourceMappingURL=phone-number.module.js.map
+//# sourceMappingURL=rider-date.module.js.map
 
 /***/ })
 

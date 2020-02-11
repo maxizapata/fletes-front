@@ -1,223 +1,16 @@
-webpackJsonp([25],{
+webpackJsonp([27],{
 
 /***/ 100:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_login_login__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_signup_group_group__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_controller_controller__ = __webpack_require__(26);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, navParams, user, controller) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.user = user;
-        this.controller = controller;
-        this.dataIsLoad = this.navParams.get('dataLoad');
-    }
-    HomePage.prototype.goLogin = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__pages_login_login__["a" /* LoginPage */]);
-    };
-    HomePage.prototype.goSignup = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages_signup_group_group__["a" /* GroupPage */]);
-    };
-    HomePage.prototype.checkUser = function () {
-        console.log(this.user.id, this.user.email, this.user.token);
-    };
-    HomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/home/home.html"*/'<!--\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n-->\n\n<ion-content padding class="content">\n    <ion-header padding no-border class="header">\n        <img src="../../assets/imgs/logo_fub.png">\n    </ion-header>\n      \n  <h3></h3>\n    <ion-footer no-shadow no-border padding>\n        <button ion-button block outline color="light" (click)=\'checkUser()\'>CHECK USER</button>\n        <button ion-button block outline color="light" (click)=\'goLogin()\'>INICIAR SESION</button>\n        <button ion-button block (click)=\'goSignup()\'>REGISTRARSE</button>\n    </ion-footer>\n</ion-content>\n'/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/home/home.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_user_user__["a" /* UserProvider */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_controller_controller__["a" /* ControllerProvider */]])
-    ], HomePage);
-    return HomePage;
-}());
-
-//# sourceMappingURL=home.js.map
-
-/***/ }),
-
-/***/ 105:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PhoneValidatePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_request_request__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_controller_controller__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__driver_home_driver_home__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_vehicle_vehicle__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_driver_driver__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__rider_home_rider_home__ = __webpack_require__(107);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-var PhoneValidatePage = /** @class */ (function () {
-    function PhoneValidatePage(navCtrl, navParams, request, user, controller, vehicle, driver) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.request = request;
-        this.user = user;
-        this.controller = controller;
-        this.vehicle = vehicle;
-        this.driver = driver;
-    }
-    PhoneValidatePage.prototype.sendToken = function () {
-        var _this = this;
-        this.controller.presentLoading('Verificando el token');
-        var headers = { 'Content-Type': 'application/json', 'Authorization': 'Token ' + this.user.token };
-        this.request.requestsPost('send_token', headers, { 'user_id': this.user.id, 'token': this.sms_code }).then(function (result) {
-            if (_this.request.isValid(result, 200)) {
-                console.log('Is valid');
-                if (_this.user.group === 'driver') {
-                    _this.driver.getMyVehicles();
-                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__driver_home_driver_home__["a" /* DriverHomePage */]);
-                }
-                else if (_this.user.group === 'rider') {
-                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_8__rider_home_rider_home__["a" /* RiderHomePage */]);
-                }
-                _this.controller.dismissLoading();
-            }
-            else {
-                console.log("It's not valid");
-                _this.controller.presentAlert('ERROR', 'Error de comunicación con el servidor');
-                _this.controller.dismissLoading();
-            }
-        });
-    };
-    PhoneValidatePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-phone-validate',template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/phone-validate/phone-validate.html"*/'<ion-header>\n    <ion-navbar color="dark">\n      <ion-title>FUB</ion-title>\n    </ion-navbar>\n  </ion-header>  \n<ion-content padding class="backgroud-purple">\n  <p class="text-title">Introduce el codigo de seguridad enviado a tu celular.</p>\n  <form (submit)="sendToken()">\n      <ion-item class="form">\n        <ion-input [(ngModel)]="sms_code" name="sms_code" type="number" maxlength="4"></ion-input>\n      </ion-item>\n      <ion-footer no-shadow no-border padding>\n        <button ion-fab type="Enviar" color="secondary" class="rigth-button" *ngIf="sms_code"><ion-icon name="checkmark"></ion-icon></button>\n        <ng-template #button_disable>\n          <button ion-fab type="Enviar" color="secondary" class="rigth-button" [disabled]="!isenabled"><ion-icon name="checkmark"></ion-icon></button>\n        </ng-template>        \n      </ion-footer>\n  </form>\n</ion-content>\n    '/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/phone-validate/phone-validate.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_request_request__["a" /* RequestProvider */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_user_user__["a" /* UserProvider */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_controller_controller__["a" /* ControllerProvider */],
-            __WEBPACK_IMPORTED_MODULE_6__providers_vehicle_vehicle__["a" /* VehicleProvider */],
-            __WEBPACK_IMPORTED_MODULE_7__providers_driver_driver__["a" /* DriverProvider */]])
-    ], PhoneValidatePage);
-    return PhoneValidatePage;
-}());
-
-//# sourceMappingURL=phone-validate.js.map
-
-/***/ }),
-
-/***/ 106:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverPricePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_request_request__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_trip_trip__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__driver_home_driver_home__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_user_user__ = __webpack_require__(18);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var DriverPricePage = /** @class */ (function () {
-    function DriverPricePage(navCtrl, navParams, request, trip, user) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.request = request;
-        this.trip = trip;
-        this.user = user;
-    }
-    DriverPricePage.prototype.ionViewDidLoad = function () {
-        console.log(this.trip.rider_channel);
-    };
-    DriverPricePage.prototype.sendPrice = function () {
-        var headers = this.request.getHeaders();
-        var data = { 'price': this.price,
-            'trip': this.trip.id,
-            'rider_channel': this.trip.rider_channel,
-            'driver': this.user.id
-        };
-        this.trip.send('send_price', data);
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__driver_home_driver_home__["a" /* DriverHomePage */]);
-    };
-    DriverPricePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-driver-price',template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/driver-price/driver-price.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>driver price</ion-title>\n  </ion-navbar>\n</ion-header>\n  \n<ion-content class="backgroud-purple">\n  <h2>¿Cuanto cuesta la hora de tu servicio?</h2>\n  <form (submit)="sendPrice()">\n    <ion-item class="form">\n      <ion-input [(ngModel)]="price" name="price" type="number"></ion-input>\n    </ion-item>\n    <ion-footer no-shadow no-border padding>\n      <button ion-fab type="Enviar" color="secondary" class="rigth-button" *ngIf="price; else button_disable"><ion-icon name="checkmark"></ion-icon></button>\n      <ng-template #button_disable>\n        <button ion-fab type="Enviar" color="secondary" class="rigth-button" [disabled]="!isenabled"><ion-icon name="checkmark"></ion-icon></button>\n      </ng-template>        \n    </ion-footer>      \n  </form>\n</ion-content>\n  '/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/driver-price/driver-price.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_request_request__["a" /* RequestProvider */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_trip_trip__["a" /* TripProvider */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_user_user__["a" /* UserProvider */]])
-    ], DriverPricePage);
-    return DriverPricePage;
-}());
-
-//# sourceMappingURL=driver-price.js.map
-
-/***/ }),
-
-/***/ 107:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RiderHomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rider_vehicle_rider_vehicle__ = __webpack_require__(186);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_vehicle_vehicle__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__rider_trips_rider_trips__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rider_vehicle_rider_vehicle__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_vehicle_vehicle__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__rider_trips_rider_trips__ = __webpack_require__(176);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -263,15 +56,15 @@ var RiderHomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 108:
+/***/ 101:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NamePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__password_password__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__password_password__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -309,14 +102,14 @@ var NamePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 18:
+/***/ 13:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__request_request__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__request_request__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -395,18 +188,18 @@ var UserProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 181:
+/***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverAddVehiclePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_vehicle_vehicle__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_request_request__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_controller_controller__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__load_load__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_vehicle_vehicle__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_request_request__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_controller_controller__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__load_load__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -469,18 +262,18 @@ var DriverAddVehiclePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 182:
+/***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PhoneNumberPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__phone_validate_phone_validate__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_request_request__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_controller_controller__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__information_information__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__phone_validate_phone_validate__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_request_request__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_controller_controller__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__information_information__ = __webpack_require__(177);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -540,17 +333,17 @@ var PhoneNumberPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 183:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverTripsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_driver_driver__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__driver_home_driver_home__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_trip_trip__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__driver_trip_details_driver_trip_details__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_driver_driver__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__driver_home_driver_home__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_trip_trip__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__driver_trip_details_driver_trip_details__ = __webpack_require__(75);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -601,15 +394,15 @@ var DriverTripsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 184:
+/***/ 167:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverAlertPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__driver_price_driver_price__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__driver_multivehicle_driver_multivehicle__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__driver_price_driver_price__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__driver_multivehicle_driver_multivehicle__ = __webpack_require__(168);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -652,12 +445,15 @@ var DriverAlertPage = /** @class */ (function () {
     DriverAlertPage.prototype.dismiss = function () {
         this.navCtrl.pop();
     };
-    var _a, _b, _c, _d, _e;
     DriverAlertPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-driver-alert',template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/driver-alert/driver-alert.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>driver-alert</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <p>Tienes un nuevo viaje</p>\n  <p>¿Quieres postularte?</p>\n  <ion-footer no-shadow no-border padding>\n    <button ion-button block color="secondary" (click)="accept()">Aceptar viaje</button>\n    <button ion-button block color="danger" (click)="dismiss()">Rechazar viaje</button>\n  </ion-footer> \n</ion-content>\n'/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/driver-alert/driver-alert.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" ? _a : Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" ? _b : Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" ? _c : Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" ? _d : Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */]) === "function" ? _e : Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */]])
     ], DriverAlertPage);
     return DriverAlertPage;
 }());
@@ -666,13 +462,13 @@ var DriverAlertPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 185:
+/***/ 168:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverMultivehiclePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -711,16 +507,16 @@ var DriverMultivehiclePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 186:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RiderVehiclePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_vehicle_vehicle__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_trip_trip__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__rider_date_rider_date__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_vehicle_vehicle__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_trip_trip__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__rider_date_rider_date__ = __webpack_require__(170);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -762,15 +558,15 @@ var RiderVehiclePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 187:
+/***/ 170:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RiderDatePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_trip_trip__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rider_places_rider_places__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_trip_trip__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rider_places_rider_places__ = __webpack_require__(171);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -810,15 +606,15 @@ var RiderDatePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 188:
+/***/ 171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RiderPlacesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_trip_trip__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rider_map_rider_map__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_trip_trip__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rider_map_rider_map__ = __webpack_require__(172);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -856,18 +652,19 @@ var RiderPlacesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 189:
+/***/ 172:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RiderMapPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_trip_trip__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_request_request__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_websocket_websocket__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_trip_trip__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__rider_driverlist_rider_driverlist__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_request_request__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_websocket_websocket__ = __webpack_require__(45);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -877,6 +674,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -895,14 +693,9 @@ var RiderMapPage = /** @class */ (function () {
         this.destination = '';
     }
     RiderMapPage.prototype.ionViewDidLoad = function () {
-        this.ws.wsConnect(this.request.setUrl('ws_connect', this.user.id));
         console.log('cargando mapa');
         this.getPosition();
         console.log(this.trip.vehicle);
-        this.ws.messages.subscribe(function (trip_data) {
-            console.log('se ejecuto');
-            console.log(trip_data);
-        });
     };
     RiderMapPage.prototype.getPosition = function () {
         var _this = this;
@@ -944,13 +737,22 @@ var RiderMapPage = /** @class */ (function () {
         });
     };
     RiderMapPage.prototype.createTrip = function () {
-        this.trip.send('create_trip', {
+        var _this = this;
+        this.ws.webSocket.subscribe(function (trip_data) {
+            console.log(trip_data);
+            _this.trip.available_drivers.push(trip_data);
+            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__rider_driverlist_rider_driverlist__["a" /* RiderDriverlistPage */]);
+            //location.reload();
+        });
+        this.ws.sendMsg('create_trip', {
             date: this.trip.date,
             hour: this.trip.hour,
             pick_up: this.trip.pick_up,
             drop_off: this.trip.drop_off,
             vehicle: this.trip.vehicle
-        });
+        }, this.trip.vehicle);
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__rider_driverlist_rider_driverlist__["a" /* RiderDriverlistPage */]);
+        //this.navCtrl.setRoot(RiderDriverlistPage)
     };
     RiderMapPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
@@ -960,8 +762,8 @@ var RiderMapPage = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */],
             __WEBPACK_IMPORTED_MODULE_3__providers_user_user__["a" /* UserProvider */],
             __WEBPACK_IMPORTED_MODULE_4__providers_trip_trip__["a" /* TripProvider */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_request_request__["a" /* RequestProvider */],
-            __WEBPACK_IMPORTED_MODULE_6__providers_websocket_websocket__["a" /* WebsocketProvider */]])
+            __WEBPACK_IMPORTED_MODULE_6__providers_request_request__["a" /* RequestProvider */],
+            __WEBPACK_IMPORTED_MODULE_7__providers_websocket_websocket__["a" /* WebsocketProvider */]])
     ], RiderMapPage);
     return RiderMapPage;
 }());
@@ -970,17 +772,140 @@ var RiderMapPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 190:
+/***/ 174:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RiderDriverlistPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_websocket_websocket__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_trip_trip__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__rider_driver_detail_rider_driver_detail__ = __webpack_require__(175);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var RiderDriverlistPage = /** @class */ (function () {
+    function RiderDriverlistPage(navCtrl, navParams, ws, user, trip) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.ws = ws;
+        this.user = user;
+        this.trip = trip;
+        this.message = {
+            author: "Cualquier autor",
+            message: "Esto es un mensaje de prueba"
+        };
+    }
+    RiderDriverlistPage.prototype.selectDriver = function (driver) {
+        this.trip.price = driver.price;
+        this.trip.driver = driver.driver;
+        this.trip.id = driver.trip;
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__rider_driver_detail_rider_driver_detail__["a" /* RiderDriverDetailPage */]);
+    };
+    RiderDriverlistPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-rider-driverlist',template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/rider-driverlist/rider-driverlist.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>rider-driverlist</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item class="backgroud-purple">\n    <ion-list *ngIf="trip.available_drivers.length!==0; else no_trips">\n      <button ion-item class="backgroud-purple" *ngFor="let driver of trip.available_drivers" (click)="selectDriver(driver)">\n        <p>{{driver.price}}</p>\n      </button>\n    </ion-list>\n    <ng-template #no_trips class="backgroud-purple">\n      <p>En espera por conductores</p>\n    </ng-template>\n  </ion-item>\n</ion-content>\n'/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/rider-driverlist/rider-driverlist.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_websocket_websocket__["a" /* WebsocketProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_user_user__["a" /* UserProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_trip_trip__["a" /* TripProvider */]])
+    ], RiderDriverlistPage);
+    return RiderDriverlistPage;
+}());
+
+//# sourceMappingURL=rider-driverlist.js.map
+
+/***/ }),
+
+/***/ 175:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RiderDriverDetailPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_websocket_websocket__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_trip_trip__ = __webpack_require__(23);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var RiderDriverDetailPage = /** @class */ (function () {
+    function RiderDriverDetailPage(navCtrl, navParams, ws, user, trip) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.ws = ws;
+        this.user = user;
+        this.trip = trip;
+        this.price = this.trip.price;
+    }
+    RiderDriverDetailPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RiderDriverDetailPage');
+    };
+    RiderDriverDetailPage.prototype.startTrip = function () {
+        var data = {
+            rider: this.user.id,
+            trip: this.trip.id,
+            price: this.trip.price,
+            driver: this.trip.driver
+        };
+        this.ws.sendMsg('confirmed_trip', data);
+    };
+    RiderDriverDetailPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-rider-driver-detail',template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/rider-driver-detail/rider-driver-detail.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>rider-driver-detail</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <p>{{ price }} </p>\n  <button ion-button block color="secondary" (click)="startTrip()">Mis viajes</button>\n</ion-content>\n'/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/rider-driver-detail/rider-driver-detail.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_websocket_websocket__["a" /* WebsocketProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_user_user__["a" /* UserProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_trip_trip__["a" /* TripProvider */]])
+    ], RiderDriverDetailPage);
+    return RiderDriverDetailPage;
+}());
+
+//# sourceMappingURL=rider-driver-detail.js.map
+
+/***/ }),
+
+/***/ 176:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RiderTripsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_driver_driver__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__driver_home_driver_home__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_trip_trip__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__driver_trip_details_driver_trip_details__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_driver_driver__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__driver_home_driver_home__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_trip_trip__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__driver_trip_details_driver_trip_details__ = __webpack_require__(75);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1031,17 +956,17 @@ var RiderTripsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 191:
+/***/ 177:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InformationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__phone_validate_phone_validate__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_request_request__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_controller_controller__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__phone_validate_phone_validate__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_request_request__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_controller_controller__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1102,19 +1027,19 @@ var InformationPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 192:
+/***/ 178:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_name_name__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_request_request__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_controller_controller__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__load_load__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_name_name__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_request_request__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_controller_controller__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__load_load__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1186,16 +1111,16 @@ var LoginPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 193:
+/***/ 179:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PasswordPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_controller_controller__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__email_email__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_controller_controller__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__email_email__ = __webpack_require__(180);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1246,17 +1171,17 @@ var PasswordPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 194:
+/***/ 180:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_controller_controller__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_request_request__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_controller_controller__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_request_request__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(93);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1336,15 +1261,15 @@ var EmailPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 195:
+/***/ 181:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__name_name__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__name_name__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1382,14 +1307,14 @@ var GroupPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 196:
+/***/ 182:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogoutPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__load_load__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__load_load__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1424,7 +1349,7 @@ var LogoutPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 228:
+/***/ 211:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -1437,16 +1362,16 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 228;
+webpackEmptyAsyncContext.id = 211;
 
 /***/ }),
 
-/***/ 24:
+/***/ 22:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RequestProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1571,15 +1496,67 @@ var RequestProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 26:
+/***/ 23:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TripProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__request_request__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__websocket_websocket__ = __webpack_require__(45);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var TripProvider = /** @class */ (function () {
+    function TripProvider(http, request, user, ws) {
+        this.http = http;
+        this.request = request;
+        this.user = user;
+        this.ws = ws;
+        this.available_drivers = [];
+    }
+    TripProvider.prototype.getTripInformation = function () {
+        this.request.resquestGet('trip_detail', this.request.headers)
+            .subscribe(function (data) {
+            return data;
+        });
+    };
+    TripProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2__request_request__["a" /* RequestProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_user_user__["a" /* UserProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__websocket_websocket__["a" /* WebsocketProvider */]])
+    ], TripProvider);
+    return TripProvider;
+}());
+
+//# sourceMappingURL=trip.js.map
+
+/***/ }),
+
+/***/ 25:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ControllerProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1670,109 +1647,117 @@ var ControllerProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 272:
+/***/ 253:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/driver-add-vehicle/driver-add-vehicle.module": [
-		725,
-		24
+		484,
+		26
 	],
 	"../pages/driver-alert/driver-alert.module": [
-		726,
-		23
+		485,
+		25
 	],
 	"../pages/driver-completed-trips/driver-completed-trips.module": [
-		727,
-		0
+		486,
+		1
 	],
 	"../pages/driver-home/driver-home.module": [
-		728,
-		22
+		487,
+		24
 	],
 	"../pages/driver-multivehicle/driver-multivehicle.module": [
-		729,
-		21
+		488,
+		23
 	],
 	"../pages/driver-price/driver-price.module": [
-		730,
-		20
+		489,
+		22
 	],
 	"../pages/driver-trip-details/driver-trip-details.module": [
-		731,
-		19
+		490,
+		21
 	],
 	"../pages/driver-trips/driver-trips.module": [
-		732,
-		18
+		491,
+		20
 	],
 	"../pages/information/information.module": [
-		733,
-		17
+		492,
+		19
 	],
 	"../pages/load/load.module": [
-		734,
-		16
+		493,
+		18
 	],
 	"../pages/login/login.module": [
-		735,
-		15
+		494,
+		17
 	],
 	"../pages/logout/logout.module": [
-		736,
-		14
+		495,
+		16
 	],
 	"../pages/phone-number/phone-number.module": [
-		737,
-		13
+		496,
+		15
 	],
 	"../pages/phone-validate/phone-validate.module": [
-		738,
-		12
+		497,
+		14
 	],
 	"../pages/rider-date/rider-date.module": [
-		739,
-		11
+		498,
+		13
+	],
+	"../pages/rider-driver-detail/rider-driver-detail.module": [
+		499,
+		12
+	],
+	"../pages/rider-driver-map/rider-driver-map.module": [
+		500,
+		0
 	],
 	"../pages/rider-driverlist/rider-driverlist.module": [
-		740,
-		10
+		501,
+		11
 	],
 	"../pages/rider-home/rider-home.module": [
-		741,
-		9
+		502,
+		10
 	],
 	"../pages/rider-map/rider-map.module": [
-		742,
-		8
+		503,
+		9
 	],
 	"../pages/rider-places/rider-places.module": [
-		743,
-		7
+		504,
+		8
 	],
 	"../pages/rider-trips/rider-trips.module": [
-		744,
-		6
+		505,
+		7
 	],
 	"../pages/rider-vehicle/rider-vehicle.module": [
-		745,
-		5
+		506,
+		6
 	],
 	"../pages/signup/email/email.module": [
-		746,
-		4
+		507,
+		5
 	],
 	"../pages/signup/group/group.module": [
-		747,
-		3
+		508,
+		4
 	],
 	"../pages/signup/name/name.module": [
-		748,
-		2
+		509,
+		3
 	],
 	"../pages/signup/password/password.module": [
-		749,
-		1
+		510,
+		2
 	]
 };
 function webpackAsyncContext(req) {
@@ -1786,78 +1771,18 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 272;
+webpackAsyncContext.id = 253;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 326:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RiderDriverlistPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_websocket_websocket__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(18);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var RiderDriverlistPage = /** @class */ (function () {
-    function RiderDriverlistPage(navCtrl, navParams, ws, user) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.ws = ws;
-        this.user = user;
-        this.message = {
-            author: "Cualquier autor",
-            message: "Esto es un mensaje de prueba"
-        };
-    }
-    RiderDriverlistPage_1 = RiderDriverlistPage;
-    RiderDriverlistPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        console.log(this.available_drivers);
-        this.ws.messages.subscribe(function (trip_data) {
-            _this.available_drivers.push(trip_data);
-            _this.navCtrl.setRoot(RiderDriverlistPage_1);
-            console.log('se ejecuto');
-        });
-    };
-    var RiderDriverlistPage_1;
-    RiderDriverlistPage = RiderDriverlistPage_1 = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-rider-driverlist',template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/rider-driverlist/rider-driverlist.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>rider-driverlist</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/rider-driverlist/rider-driverlist.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_websocket_websocket__["a" /* WebsocketProvider */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_user_user__["a" /* UserProvider */]])
-    ], RiderDriverlistPage);
-    return RiderDriverlistPage;
-}());
-
-//# sourceMappingURL=rider-driverlist.js.map
-
-/***/ }),
-
-/***/ 327:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(328);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(438);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(424);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1865,127 +1790,54 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 36:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TripProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__request_request__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__websocket_websocket__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_webSocket__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operators__ = __webpack_require__(3);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var TripProvider = /** @class */ (function () {
-    function TripProvider(http, request, user, ws) {
-        this.http = http;
-        this.request = request;
-        this.user = user;
-        this.ws = ws;
-    }
-    TripProvider.prototype.connect = function (vehicle) {
-        if (!this.webSocket || this.webSocket.complete) {
-            this.webSocket = new __WEBPACK_IMPORTED_MODULE_5_rxjs_webSocket__["WebSocketSubject"](this.request.setUrl('ws_connect', this.user.id));
-            this.messages = this.webSocket.pipe(Object(__WEBPACK_IMPORTED_MODULE_6_rxjs_operators__["share"])());
-            this.messages.subscribe(function (message) { return console.log(message); });
-        }
-    };
-    TripProvider.prototype.send = function (action, data) {
-        this.connect(this.vehicle);
-        var message = {
-            action: action,
-            veh_type: this.vehicle,
-            user_id: this.user.id,
-            token: this.user.token,
-            data: data
-        };
-        console.log('Enviando msj a websocket');
-        this.webSocket.next(message);
-    };
-    TripProvider.prototype.getTripInformation = function () {
-        this.request.resquestGet('trip_detail', this.request.headers)
-            .subscribe(function (data) {
-            return data;
-        });
-    };
-    TripProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
-            __WEBPACK_IMPORTED_MODULE_2__request_request__["a" /* RequestProvider */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_user_user__["a" /* UserProvider */],
-            __WEBPACK_IMPORTED_MODULE_4__websocket_websocket__["a" /* WebsocketProvider */]])
-    ], TripProvider);
-    return TripProvider;
-}());
-
-//# sourceMappingURL=trip.js.map
-
-/***/ }),
-
-/***/ 438:
+/***/ 424:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(722);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_request_request__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_controller_controller__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_trip_trip__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_signup_email_email__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_signup_group_group__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_phone_number_phone_number__ = __webpack_require__(182);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_phone_validate_phone_validate__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_signup_name_name__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_signup_password_password__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_load_load__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_driver_home_driver_home__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_information_information__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_driver_add_vehicle_driver_add_vehicle__ = __webpack_require__(181);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_websocket_websocket__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_vehicle_vehicle__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_rider_home_rider_home__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_rider_places_rider_places__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_rider_vehicle_rider_vehicle__ = __webpack_require__(186);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_rider_date_rider_date__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_rider_map_rider_map__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_native_geolocation__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_rider_driverlist_rider_driverlist__ = __webpack_require__(326);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ionic_native_local_notifications_ngx__ = __webpack_require__(723);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_logout_logout__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_driver_driver__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_driver_trips_driver_trips__ = __webpack_require__(183);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_driver_trip_details_driver_trip_details__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_driver_price_driver_price__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_rider_trips_rider_trips__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_rider_rider__ = __webpack_require__(724);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_driver_alert_driver_alert__ = __webpack_require__(184);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_driver_multivehicle_driver_multivehicle__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(481);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_request_request__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_controller_controller__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_trip_trip__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_signup_email_email__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_signup_group_group__ = __webpack_require__(181);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_phone_number_phone_number__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_phone_validate_phone_validate__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_signup_name_name__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_signup_password_password__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_load_load__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_driver_home_driver_home__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_information_information__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_driver_add_vehicle_driver_add_vehicle__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_websocket_websocket__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_vehicle_vehicle__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_rider_home_rider_home__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_rider_places_rider_places__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_rider_vehicle_rider_vehicle__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_rider_date_rider_date__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_rider_map_rider_map__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_native_geolocation__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_rider_driverlist_rider_driverlist__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ionic_native_local_notifications_ngx__ = __webpack_require__(482);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_logout_logout__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_driver_driver__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_driver_trips_driver_trips__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_driver_trip_details_driver_trip_details__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_driver_price_driver_price__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_rider_trips_rider_trips__ = __webpack_require__(176);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_rider_rider__ = __webpack_require__(483);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_driver_alert_driver_alert__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_driver_multivehicle_driver_multivehicle__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_rider_driver_detail_rider_driver_detail__ = __webpack_require__(175);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2006,6 +1858,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // Signup Pages
+
 
 
 
@@ -2066,7 +1919,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_36__pages_driver_trip_details_driver_trip_details__["a" /* DriverTripDetailsPage */],
                 __WEBPACK_IMPORTED_MODULE_37__pages_driver_price_driver_price__["a" /* DriverPricePage */],
                 __WEBPACK_IMPORTED_MODULE_38__pages_rider_trips_rider_trips__["a" /* RiderTripsPage */],
-                __WEBPACK_IMPORTED_MODULE_41__pages_driver_multivehicle_driver_multivehicle__["a" /* DriverMultivehiclePage */]
+                __WEBPACK_IMPORTED_MODULE_41__pages_driver_multivehicle_driver_multivehicle__["a" /* DriverMultivehiclePage */],
+                __WEBPACK_IMPORTED_MODULE_42__pages_rider_driver_detail_rider_driver_detail__["a" /* RiderDriverDetailPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -2087,6 +1941,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/phone-number/phone-number.module#PhoneNumberPageModule', name: 'PhoneNumberPage', segment: 'phone-number', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/phone-validate/phone-validate.module#PhoneValidatePageModule', name: 'PhoneValidatePage', segment: 'phone-validate', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/rider-date/rider-date.module#RiderDatePageModule', name: 'RiderDatePage', segment: 'rider-date', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/rider-driver-detail/rider-driver-detail.module#RiderDriverDetailPageModule', name: 'RiderDriverDetailPage', segment: 'rider-driver-detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/rider-driver-map/rider-driver-map.module#RiderDriverMapPageModule', name: 'RiderDriverMapPage', segment: 'rider-driver-map', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/rider-driverlist/rider-driverlist.module#RiderDriverlistPageModule', name: 'RiderDriverlistPage', segment: 'rider-driverlist', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/rider-home/rider-home.module#RiderHomePageModule', name: 'RiderHomePage', segment: 'rider-home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/rider-map/rider-map.module#RiderMapPageModule', name: 'RiderMapPage', segment: 'rider-map', priority: 'low', defaultHistory: [] },
@@ -2128,7 +1984,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_36__pages_driver_trip_details_driver_trip_details__["a" /* DriverTripDetailsPage */],
                 __WEBPACK_IMPORTED_MODULE_37__pages_driver_price_driver_price__["a" /* DriverPricePage */],
                 __WEBPACK_IMPORTED_MODULE_38__pages_rider_trips_rider_trips__["a" /* RiderTripsPage */],
-                __WEBPACK_IMPORTED_MODULE_41__pages_driver_multivehicle_driver_multivehicle__["a" /* DriverMultivehiclePage */]
+                __WEBPACK_IMPORTED_MODULE_41__pages_driver_multivehicle_driver_multivehicle__["a" /* DriverMultivehiclePage */],
+                __WEBPACK_IMPORTED_MODULE_42__pages_rider_driver_detail_rider_driver_detail__["a" /* RiderDriverDetailPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
@@ -2148,7 +2005,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_38__pages_rider_trips_rider_trips__["a" /* RiderTripsPage */],
                 __WEBPACK_IMPORTED_MODULE_39__providers_rider_rider__["a" /* RiderProvider */],
                 __WEBPACK_IMPORTED_MODULE_40__pages_driver_alert_driver_alert__["a" /* DriverAlertPage */],
-                __WEBPACK_IMPORTED_MODULE_41__pages_driver_multivehicle_driver_multivehicle__["a" /* DriverMultivehiclePage */]
+                __WEBPACK_IMPORTED_MODULE_41__pages_driver_multivehicle_driver_multivehicle__["a" /* DriverMultivehiclePage */],
+                __WEBPACK_IMPORTED_MODULE_42__pages_rider_driver_detail_rider_driver_detail__["a" /* RiderDriverDetailPage */]
             ]
         })
     ], AppModule);
@@ -2159,14 +2017,14 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 46:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VehicleProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__request_request__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__request_request__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2208,24 +2066,77 @@ var VehicleProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 51:
+/***/ 45:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WebsocketProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_webSocket__ = __webpack_require__(455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__user_user__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var WebsocketProvider = /** @class */ (function () {
+    function WebsocketProvider(http, user) {
+        this.http = http;
+        this.user = user;
+        this.webSocket = Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_webSocket__["a" /* webSocket */])('ws://127.0.0.1:8888/ws/trips/' + this.user.id + '/');
+    }
+    WebsocketProvider.prototype.subscribe_prueba = function () {
+        console.log('Estoy suscrito!!!');
+        this.webSocket.subscribe(function (msg) { return console.log('msg received: ' + msg); }, function (err) { return console.log('hubo un error!!!'); }, function () { return console.log('complete'); });
+    };
+    WebsocketProvider.prototype.sendMsg = function (action, data, vehicle) {
+        var message = {
+            action: action,
+            veh_type: vehicle,
+            token: this.user.token,
+            user_id: this.user.id,
+            data: data
+        };
+        this.webSocket.next(message);
+    };
+    WebsocketProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_3__user_user__["a" /* UserProvider */]])
+    ], WebsocketProvider);
+    return WebsocketProvider;
+}());
+
+//# sourceMappingURL=websocket.js.map
+
+/***/ }),
+
+/***/ 48:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverHomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_vehicle_vehicle__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__driver_add_vehicle_driver_add_vehicle__ = __webpack_require__(181);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_trip_trip__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_websocket_websocket__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_request_request__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_controller_controller__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__driver_trip_details_driver_trip_details__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_driver_driver__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__driver_trips_driver_trips__ = __webpack_require__(183);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__driver_alert_driver_alert__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_vehicle_vehicle__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__driver_add_vehicle_driver_add_vehicle__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_trip_trip__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_websocket_websocket__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_request_request__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_controller_controller__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__driver_trip_details_driver_trip_details__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_driver_driver__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__driver_trips_driver_trips__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__driver_alert_driver_alert__ = __webpack_require__(167);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2268,9 +2179,10 @@ var DriverHomePage = /** @class */ (function () {
             message: "Esto es un mensaje de prueba"
         };
     }
-    DriverHomePage.prototype.ionViewDidLoad = function () {
-        this.ws.wsConnect(this.request.setUrl('ws_connect', this.user.id));
-    };
+    DriverHomePage_1 = DriverHomePage;
+    //ionViewDidLoad(){
+    //  console.log('Cargo ion view did load')
+    //}
     DriverHomePage.prototype.checkVehicles = function () {
         if (this.driver.myVehicles) {
             return true;
@@ -2320,30 +2232,48 @@ var DriverHomePage = /** @class */ (function () {
     };
     DriverHomePage.prototype.tripEvent = function () {
         var _this = this;
-        console.log('New trip event');
-        this.ws.messages.subscribe(function (trip_data) {
-            _this.trip.id = trip_data['id'];
-            _this.trip.pick_up = trip_data['pick_up'];
-            _this.trip.drop_off = trip_data['drop_off'];
-            _this.trip.uuid = trip_data['uuid'];
-            _this.trip.rider = trip_data['rider'];
-            _this.trip.rider_channel = trip_data['rider_channel'];
-            _this.trip.create_at = trip_data['create_at'];
-            _this.trip.status = trip_data['status'];
-            _this.trip.vehicle = trip_data['vehicle'];
-            _this.trip.date = trip_data['data'];
-            var activeVehicles = [];
-            activeVehicles = _this.driver.searchActiveVehicles(trip_data['vehicle']);
-            if (activeVehicles.length === 0) {
-                console.log('No hay vehiculos activos');
+        this.ws.webSocket.subscribe(function (trip_data) {
+            if (trip_data['message_type'] === 'available_drivers') {
+                _this.newTrip(trip_data);
             }
             else {
-                _this.driver.myRequestedTrips.push(trip_data);
-                var alert_1 = _this.modalCrtl.create(__WEBPACK_IMPORTED_MODULE_12__driver_alert_driver_alert__["a" /* DriverAlertPage */], { activeVehicles: activeVehicles });
-                // this.tripAlert(trip_data['pick_up'], trip_data['drop_off'], trip_data['datetime'])
-                alert_1.present();
+                console.log('Ahora estamos en otro peo');
+                console.log(trip_data['message_type']);
             }
+        }, function (err) { return _this.errorReload(); });
+    };
+    DriverHomePage.prototype.newTrip = function (trip_data) {
+        this.trip.id = trip_data['id'];
+        this.trip.pick_up = trip_data['pick_up'];
+        this.trip.drop_off = trip_data['drop_off'];
+        this.trip.uuid = trip_data['uuid'];
+        this.trip.rider = trip_data['rider'];
+        this.trip.rider_channel = trip_data['rider_channel'];
+        this.trip.create_at = trip_data['create_at'];
+        this.trip.status = trip_data['status'];
+        this.trip.vehicle = trip_data['vehicle'];
+        this.trip.date = trip_data['data'];
+        var activeVehicles = [];
+        activeVehicles = this.driver.searchActiveVehicles(trip_data['vehicle']);
+        if (activeVehicles.length === 0) {
+            console.log('No hay vehiculos activos');
+        }
+        else {
+            this.driver.myRequestedTrips.push(trip_data);
+            var alert_1 = this.modalCrtl.create(__WEBPACK_IMPORTED_MODULE_12__driver_alert_driver_alert__["a" /* DriverAlertPage */], { activeVehicles: activeVehicles });
+            // this.tripAlert(trip_data['pick_up'], trip_data['drop_off'], trip_data['datetime'])
+            alert_1.present();
+        }
+    };
+    DriverHomePage.prototype.errorReload = function () {
+        console.log('ERROR DE CONEXION');
+        var alert = this.alertCrtl.create({
+            title: 'Error',
+            subTitle: 'ERRORONES',
+            buttons: ['Recargar']
         });
+        alert.present();
+        this.navCtrl.setRoot(DriverHomePage_1);
     };
     DriverHomePage.prototype.tripAlert = function (pick_up, drop_off, datetime) {
         var _this = this;
@@ -2386,9 +2316,10 @@ var DriverHomePage = /** @class */ (function () {
         }
         console.log(this.wsIsOff);
     };
-    DriverHomePage = __decorate([
+    var DriverHomePage_1;
+    DriverHomePage = DriverHomePage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-driver-home',template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/driver-home/driver-home.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Menú condutor</ion-title>\n      <!--<button ion-button menuToggle>\n          <ion-icon name="ios-notifications-outline" item-right></ion-icon>\n        </button>\n      -->\n    </ion-navbar>\n  </ion-header>\n  \n<ion-content class="backgroud-purple">\n<p *ngIf="checkVehicles()">Tus vehiculos</p>\n<ion-list *ngIf="checkVehicles(); else no_vehicles">\n  <ion-item class="backgroud-purple" *ngFor="let vehicle of driver.myVehicles">\n    <ion-toggle float-right [(ngModel)]="vehicle.is_active" color="secondary" checked="false" (ionChange)="vehicleStatus(vehicle)" cancelable=true></ion-toggle>\n    <ion-label>\n      {{ vehicle.make }} - {{ vehicle.model }}\n    </ion-label> \n  </ion-item> \n</ion-list>\n\n<ng-template #no_vehicles>\n  <p padding class="text-title">No tienes vehiculos agregados</p>\n</ng-template>\n<ion-footer no-shadow no-border padding>\n    <button ion-button block color="secondary" (click)="goDriverTrips()">Mis viajes</button>\n  <button ion-button block color="secondary" (click)="goAddVehicle()">Agregar vehiculo</button>\n</ion-footer> \n</ion-content>\n'/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/driver-home/driver-home.html"*/,
+            selector: 'page-driver-home',template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/driver-home/driver-home.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Menú condutor</ion-title>\n      <!--<button ion-button menuToggle>\n          <ion-icon name="ios-notifications-outline" item-right></ion-icon>\n        </button>\n      -->\n    </ion-navbar>\n  </ion-header>\n  \n<ion-content class="backgroud-purple">\n<p *ngIf="checkVehicles()">Tus vehiculos</p>\n<ion-list *ngIf="checkVehicles(); else no_vehicles">\n  <ion-item class="backgroud-purple" *ngFor="let vehicle of driver.myVehicles">\n    <ion-toggle float-right [(ngModel)]="vehicle.is_active" color="secondary" checked="false" (ionChange)="vehicleStatus(vehicle)" cancelable=true></ion-toggle>\n    <ion-label>\n      {{ vehicle.make }} - {{ vehicle.model }}\n    </ion-label> \n  </ion-item> \n</ion-list>\n\n<ng-template #no_vehicles>\n  <p padding class="text-title">No tienes vehiculos agregados</p>\n</ng-template>\n<ion-footer no-shadow no-border padding>\n  <button ion-button block color="secondary" (click)="goDriverTrips()">Mis viajes</button>\n  <button ion-button block color="secondary" (click)="goAddVehicle()">Agregar vehiculo</button>\n</ion-footer> \n</ion-content>\n'/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/driver-home/driver-home.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
@@ -2409,16 +2340,118 @@ var DriverHomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 61:
+/***/ 481:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_logout_logout__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_load_load__ = __webpack_require__(56);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var MyApp = /** @class */ (function () {
+    function MyApp(platform, statusBar, splashScreen) {
+        this.platform = platform;
+        this.statusBar = statusBar;
+        this.splashScreen = splashScreen;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_load_load__["a" /* LoadPage */];
+        this.initializeApp();
+        // used for an example of ngFor and navigation
+        this.pages = [
+            { title: 'Cerrar sesión', component: __WEBPACK_IMPORTED_MODULE_4__pages_logout_logout__["a" /* LogoutPage */] },
+        ];
+    }
+    MyApp.prototype.initializeApp = function () {
+        var _this = this;
+        this.platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            _this.statusBar.styleDefault();
+            _this.splashScreen.hide();
+        });
+    };
+    MyApp.prototype.openPage = function (page) {
+        // Reset the content nav to have just this page
+        // we wouldn't want the back button to show in this scenario
+        this.nav.setRoot(page.component);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
+    ], MyApp.prototype, "nav", void 0);
+    MyApp = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/app/app.html"*/'<ion-menu [content]="content" type="overlay">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list class=\'app\'>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/app/app.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    ], MyApp);
+    return MyApp;
+}());
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 483:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RiderProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var RiderProvider = /** @class */ (function () {
+    function RiderProvider(http) {
+        this.http = http;
+        console.log('Hello RiderProvider Provider');
+    }
+    RiderProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+    ], RiderProvider);
+    return RiderProvider;
+}());
+
+//# sourceMappingURL=rider.js.map
+
+/***/ }),
+
+/***/ 55:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__request_request__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__controller_controller__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vehicle_vehicle__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__request_request__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__controller_controller__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vehicle_vehicle__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2527,21 +2560,21 @@ var DriverProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 62:
+/***/ 56:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoadPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_user_user__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_controller_controller__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__phone_number_phone_number__ = __webpack_require__(182);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__driver_home_driver_home__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_home__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_vehicle_vehicle__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__rider_home_rider_home__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_driver_driver__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_controller_controller__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__phone_number_phone_number__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__driver_home_driver_home__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_home__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_vehicle_vehicle__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__rider_home_rider_home__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_driver_driver__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2638,185 +2671,15 @@ var LoadPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 722:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_logout_logout__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_load_load__ = __webpack_require__(62);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var MyApp = /** @class */ (function () {
-    function MyApp(platform, statusBar, splashScreen) {
-        this.platform = platform;
-        this.statusBar = statusBar;
-        this.splashScreen = splashScreen;
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_load_load__["a" /* LoadPage */];
-        this.initializeApp();
-        // used for an example of ngFor and navigation
-        this.pages = [
-            { title: 'Cerrar sesión', component: __WEBPACK_IMPORTED_MODULE_4__pages_logout_logout__["a" /* LogoutPage */] },
-        ];
-    }
-    MyApp.prototype.initializeApp = function () {
-        var _this = this;
-        this.platform.ready().then(function () {
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-            _this.statusBar.styleDefault();
-            _this.splashScreen.hide();
-        });
-    };
-    MyApp.prototype.openPage = function (page) {
-        // Reset the content nav to have just this page
-        // we wouldn't want the back button to show in this scenario
-        this.nav.setRoot(page.component);
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
-    ], MyApp.prototype, "nav", void 0);
-    MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/app/app.html"*/'<ion-menu [content]="content" type="overlay">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list class=\'app\'>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/app/app.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
-    ], MyApp);
-    return MyApp;
-}());
-
-//# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 724:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RiderProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var RiderProvider = /** @class */ (function () {
-    function RiderProvider(http) {
-        this.http = http;
-        console.log('Hello RiderProvider Provider');
-    }
-    RiderProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
-    ], RiderProvider);
-    return RiderProvider;
-}());
-
-//# sourceMappingURL=rider.js.map
-
-/***/ }),
-
-/***/ 80:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WebsocketProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(465);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var WebsocketProvider = /** @class */ (function () {
-    function WebsocketProvider(http) {
-        this.http = http;
-    }
-    WebsocketProvider.prototype.connect = function (url) {
-        if (!this.subject) {
-            this.subject = this.create(url);
-            console.log("Successfully connected: " + url);
-        }
-        return this.subject;
-    };
-    WebsocketProvider.prototype.wsConnect = function (url) {
-        this.messages = this.connect(url).map(function (response) {
-            var data = JSON.parse(response.data);
-            return data;
-        });
-    };
-    WebsocketProvider.prototype.create = function (url) {
-        var ws = new WebSocket(url);
-        console.log(url);
-        console.log(ws);
-        var observable = __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__["Observable"].create(function (obs) {
-            ws.onmessage = obs.next.bind(obs);
-            ws.onerror = obs.error.bind(obs);
-            ws.onclose = obs.complete.bind(obs);
-            return ws.close.bind(ws);
-        });
-        var observer = {
-            next: function (data) {
-                if (ws.readyState === WebSocket.OPEN) {
-                    ws.send(JSON.stringify(data));
-                }
-            }
-        };
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__["Subject"].create(observer, observable);
-    };
-    WebsocketProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
-    ], WebsocketProvider);
-    return WebsocketProvider;
-}());
-
-//# sourceMappingURL=websocket.js.map
-
-/***/ }),
-
-/***/ 81:
+/***/ 75:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverTripDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_trip_trip__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__driver_price_driver_price__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_trip_trip__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__driver_price_driver_price__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2852,7 +2715,215 @@ var DriverTripDetailsPage = /** @class */ (function () {
 
 //# sourceMappingURL=driver-trip-details.js.map
 
+/***/ }),
+
+/***/ 93:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_login_login__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_signup_group_group__ = __webpack_require__(181);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_controller_controller__ = __webpack_require__(25);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var HomePage = /** @class */ (function () {
+    function HomePage(navCtrl, navParams, user, controller) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.user = user;
+        this.controller = controller;
+        this.dataIsLoad = this.navParams.get('dataLoad');
+    }
+    HomePage.prototype.goLogin = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__pages_login_login__["a" /* LoginPage */]);
+    };
+    HomePage.prototype.goSignup = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages_signup_group_group__["a" /* GroupPage */]);
+    };
+    HomePage.prototype.checkUser = function () {
+        console.log(this.user.id, this.user.email, this.user.token);
+    };
+    HomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-home',template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/home/home.html"*/'<!--\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n-->\n\n<ion-content padding class="content">\n    <ion-header padding no-border class="header">\n        <img src="../../assets/imgs/logo_fub.png">\n    </ion-header>\n      \n  <h3></h3>\n    <ion-footer no-shadow no-border padding>\n        <button ion-button block outline color="light" (click)=\'checkUser()\'>CHECK USER</button>\n        <button ion-button block outline color="light" (click)=\'goLogin()\'>INICIAR SESION</button>\n        <button ion-button block (click)=\'goSignup()\'>REGISTRARSE</button>\n    </ion-footer>\n</ion-content>\n'/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/home/home.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_user_user__["a" /* UserProvider */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_controller_controller__["a" /* ControllerProvider */]])
+    ], HomePage);
+    return HomePage;
+}());
+
+//# sourceMappingURL=home.js.map
+
+/***/ }),
+
+/***/ 98:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PhoneValidatePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_request_request__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_controller_controller__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__driver_home_driver_home__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_vehicle_vehicle__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_driver_driver__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__rider_home_rider_home__ = __webpack_require__(100);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+var PhoneValidatePage = /** @class */ (function () {
+    function PhoneValidatePage(navCtrl, navParams, request, user, controller, vehicle, driver) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.request = request;
+        this.user = user;
+        this.controller = controller;
+        this.vehicle = vehicle;
+        this.driver = driver;
+    }
+    PhoneValidatePage.prototype.sendToken = function () {
+        var _this = this;
+        this.controller.presentLoading('Verificando el token');
+        var headers = { 'Content-Type': 'application/json', 'Authorization': 'Token ' + this.user.token };
+        this.request.requestsPost('send_token', headers, { 'user_id': this.user.id, 'token': this.sms_code }).then(function (result) {
+            if (_this.request.isValid(result, 200)) {
+                console.log('Is valid');
+                if (_this.user.group === 'driver') {
+                    _this.driver.getMyVehicles();
+                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__driver_home_driver_home__["a" /* DriverHomePage */]);
+                }
+                else if (_this.user.group === 'rider') {
+                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_8__rider_home_rider_home__["a" /* RiderHomePage */]);
+                }
+                _this.controller.dismissLoading();
+            }
+            else {
+                console.log("It's not valid");
+                _this.controller.presentAlert('ERROR', 'Error de comunicación con el servidor');
+                _this.controller.dismissLoading();
+            }
+        });
+    };
+    PhoneValidatePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-phone-validate',template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/phone-validate/phone-validate.html"*/'<ion-header>\n    <ion-navbar color="dark">\n      <ion-title>FUB</ion-title>\n    </ion-navbar>\n  </ion-header>  \n<ion-content padding class="backgroud-purple">\n  <p class="text-title">Introduce el codigo de seguridad enviado a tu celular.</p>\n  <form (submit)="sendToken()">\n      <ion-item class="form">\n        <ion-input [(ngModel)]="sms_code" name="sms_code" type="number" maxlength="4"></ion-input>\n      </ion-item>\n      <ion-footer no-shadow no-border padding>\n        <button ion-fab type="Enviar" color="secondary" class="rigth-button" *ngIf="sms_code"><ion-icon name="checkmark"></ion-icon></button>\n        <ng-template #button_disable>\n          <button ion-fab type="Enviar" color="secondary" class="rigth-button" [disabled]="!isenabled"><ion-icon name="checkmark"></ion-icon></button>\n        </ng-template>        \n      </ion-footer>\n  </form>\n</ion-content>\n    '/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/phone-validate/phone-validate.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_request_request__["a" /* RequestProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_user_user__["a" /* UserProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_controller_controller__["a" /* ControllerProvider */],
+            __WEBPACK_IMPORTED_MODULE_6__providers_vehicle_vehicle__["a" /* VehicleProvider */],
+            __WEBPACK_IMPORTED_MODULE_7__providers_driver_driver__["a" /* DriverProvider */]])
+    ], PhoneValidatePage);
+    return PhoneValidatePage;
+}());
+
+//# sourceMappingURL=phone-validate.js.map
+
+/***/ }),
+
+/***/ 99:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverPricePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_request_request__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_trip_trip__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__driver_home_driver_home__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_user_user__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_websocket_websocket__ = __webpack_require__(45);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var DriverPricePage = /** @class */ (function () {
+    function DriverPricePage(navCtrl, navParams, request, trip, user, ws) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.request = request;
+        this.trip = trip;
+        this.user = user;
+        this.ws = ws;
+    }
+    DriverPricePage.prototype.sendPrice = function () {
+        var headers = this.request.getHeaders();
+        var data = { 'price': this.price,
+            'trip': this.trip.id,
+            'rider_channel': this.trip.rider_channel,
+            'driver': this.user.id
+        };
+        this.ws.sendMsg('send_price', data, this.trip.vehicle);
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__driver_home_driver_home__["a" /* DriverHomePage */]);
+    };
+    DriverPricePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-driver-price',template:/*ion-inline-start:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/driver-price/driver-price.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>driver price</ion-title>\n  </ion-navbar>\n</ion-header>\n  \n<ion-content class="backgroud-purple">\n  <h2>¿Cuanto cuesta la hora de tu servicio?</h2>\n  <form (submit)="sendPrice()">\n    <ion-item class="form">\n      <ion-input [(ngModel)]="price" name="price" type="number"></ion-input>\n    </ion-item>\n    <ion-footer no-shadow no-border padding>\n      <button ion-fab type="Enviar" color="secondary" class="rigth-button" *ngIf="price; else button_disable"><ion-icon name="checkmark"></ion-icon></button>\n      <ng-template #button_disable>\n        <button ion-fab type="Enviar" color="secondary" class="rigth-button" [disabled]="!isenabled"><ion-icon name="checkmark"></ion-icon></button>\n      </ng-template>        \n    </ion-footer>      \n  </form>\n</ion-content>\n  '/*ion-inline-end:"/home/maxi/Apps/ssd/telollevo/frontend/src/pages/driver-price/driver-price.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_request_request__["a" /* RequestProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_trip_trip__["a" /* TripProvider */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_user_user__["a" /* UserProvider */],
+            __WEBPACK_IMPORTED_MODULE_6__providers_websocket_websocket__["a" /* WebsocketProvider */]])
+    ], DriverPricePage);
+    return DriverPricePage;
+}());
+
+//# sourceMappingURL=driver-price.js.map
+
 /***/ })
 
-},[327]);
+},[297]);
 //# sourceMappingURL=main.js.map
