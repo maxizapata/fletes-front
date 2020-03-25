@@ -27,9 +27,7 @@ export class RiderMapPage {
               ) {}
 
   ionViewDidLoad(){
-    console.log('cargando mapa');
     this.getPosition()
-    console.log(this.trip.vehicle)
   }
 
   getPosition(){
@@ -40,6 +38,8 @@ export class RiderMapPage {
   }
 
   calculateAndDisplayRoute(myLat, myLng) {
+    console.log("TRATANDO CON SET TIMEOUT")
+    setInterval(this.prueba, 10000)
     let that = this;
     let directionsService = new google.maps.DirectionsService;
     let directionsDisplay = new google.maps.DirectionsRenderer;
@@ -57,8 +57,6 @@ export class RiderMapPage {
     that.myLocation = new google.maps.LatLng(pos);
 
     directionsService.route({
-      //origin: this.origin,
-      //destination: this.destination,
       origin: this.trip.pick_up,
       destination: this.trip.drop_off,
       travelMode: 'DRIVING'
@@ -74,7 +72,30 @@ export class RiderMapPage {
         window.alert('Error al obtener dirección' + status);
       }
     });
+    
   }
+
+  prueba(map){
+    let lats = [-34.1085258, -34.2085258, -34.3085258, -34.4085258, -34.5085258]
+    let lngs = [-58.4482781, -58.5482781, -58.6482781, -58.7482781, -58.8482781]
+    for (let i = 0; i == lats.length; i++){
+      this.updateLocation(map, lats[i], lngs[i])  
+    }
+  }
+
+  updateLocation(map, lat, lng){
+    let driverLocation = new google.maps.LatLng(lat, lng);
+    google.maps.event.addListenerOnce(map, 'idle', () => {
+      let marker = new google.maps.Marker({
+        position: driverLocation,
+        map: map,
+        title: 'Hello World!'
+      });
+      map.classList.add('show-map');
+    });
+  }
+
+
 
   createTrip(){
     this.ws.sendMsg(

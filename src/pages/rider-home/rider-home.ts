@@ -39,8 +39,11 @@ export class RiderHomePage {
 
   wsConnect(){
     this.ws.webSocket.subscribe(trip_data => {
-      if (trip_data['message_type']){
-        this.trip.available_drivers.push(trip_data);
+      console.log('OBSERVER FUERA DEL IF')
+      console.log(trip_data['data'])
+      if (trip_data['data']['message_type'] == 'add_driver_to_list'){
+        console.log(trip_data)
+        this.trip.available_drivers.push(trip_data['data']);
         this.navCtrl.setRoot(RiderDriverlistPage);  
       }
     });

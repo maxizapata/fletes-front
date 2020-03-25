@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { WebsocketProvider } from '../../providers/websocket/websocket';
 import { UserProvider } from '../../providers/user/user';
 import { TripProvider } from '../../providers/trip/trip';
+import { RiderDriverMapPage } from '../rider-driver-map/rider-driver-map';
 
 
 @IonicPage()
@@ -30,12 +31,12 @@ export class RiderDriverDetailPage {
       rider: this.user.id,
       trip: this.trip.id,
       price: this.trip.price,
-      driver: this.trip.driver
+      driver: this.trip.driver,
+      start_driver_lat: this.trip.start_driver_lat,
+      start_driver_lng: this.trip.start_driver_lng
     }
-    this.ws.sendMsg(
-      'confirmed_trip',
-      data
-    )
+    this.ws.sendMsg('chosen_driver', data)
+    this.navCtrl.setRoot(RiderDriverMapPage)
   }
 
 }

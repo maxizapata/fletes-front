@@ -31884,6 +31884,15 @@ page-home .login_button {
   color: white;
 }
 
+page-rider-driver-map #input-dest {
+  background: "light";
+}
+
+page-rider-driver-map #map-route {
+  height: 90%;
+  width: 100%;
+}
+
 page-rider-map #input-dest {
   background: "light";
 }

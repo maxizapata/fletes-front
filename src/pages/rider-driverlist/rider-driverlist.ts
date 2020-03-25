@@ -18,15 +18,17 @@ export class RiderDriverlistPage {
               public user: UserProvider,
               public trip: TripProvider) {}
 
-  private message = {
-    author: "Cualquier autor",
-    message: "Esto es un mensaje de prueba"
-  };
+  ionViewDidLoad(){
+    console.log(this.trip.available_drivers)
+  }
+
 
   selectDriver(driver){
-    this.trip.price = driver.price
-    this.trip.driver = driver.driver
-    this.trip.id = driver.trip
-    this.navCtrl.push(RiderDriverDetailPage)
+    this.trip.price = driver.price;
+    this.trip.driver = driver.driver;
+    this.trip.id = driver.trip;
+    this.trip.start_driver_lat = driver.start_driver_lat;
+    this.trip.start_driver_lng = driver.start_driver_lng;
+    this.navCtrl.push(RiderDriverDetailPage);
   }
 }

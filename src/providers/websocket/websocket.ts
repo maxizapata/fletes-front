@@ -11,9 +11,9 @@ export interface Message {
 
 @Injectable()
 export class WebsocketProvider {
-  constructor(public http: HttpClient, public user: UserProvider) {}
+  constructor(public http: HttpClient, public user: UserProvider, public request: RequestProvider) {}
 
-  webSocket: WebSocketSubject<any> = webSocket('ws://127.0.0.1:8888/ws/trips/' + this.user.id + '/')
+  webSocket: WebSocketSubject<any> = webSocket('ws://' + this.request.domain + '/ws/trips/' + this.user.id + '/')
 
   subscribe_prueba(){
     console.log('Estoy suscrito!!!')

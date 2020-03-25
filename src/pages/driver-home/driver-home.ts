@@ -9,8 +9,10 @@ import { UserProvider } from '../../providers/user/user';
 import { ControllerProvider } from '../../providers/controller/controller';
 import { DriverTripDetailsPage } from '../driver-trip-details/driver-trip-details';
 import { DriverProvider } from '../../providers/driver/driver';
-import { DriverTripsPage } from '../driver-trips/driver-trips'
+import { DriverTripsPage } from '../driver-trips/driver-trips';
 import { DriverAlertPage } from '../driver-alert/driver-alert';
+import { Geolocation } from '@ionic-native/geolocation';
+
 
 @IonicPage()
 @Component({
@@ -29,6 +31,7 @@ export class DriverHomePage {
     public request: RequestProvider,
     public user: UserProvider,
     public controller: ControllerProvider,
+    public geolocation: Geolocation,
     public driver: DriverProvider) {}
 
   alertPresent: boolean = false
@@ -36,14 +39,9 @@ export class DriverHomePage {
   map: any;
   wsIsOff: Boolean = true
 
-  private message = {
-    author: "Cualquier autor",
-    message: "Esto es un mensaje de prueba"
-  };
-
-  //ionViewDidLoad(){
-  //  console.log('Cargo ion view did load')
-  //}
+  ionViewDidLoad(){
+    this.wsConnect()
+  }
   
   checkVehicles(){
     if (this.driver.myVehicles){
@@ -53,14 +51,14 @@ export class DriverHomePage {
     }
   }
 
-  distance(lat1, lon1, lat2, lon2, unit) {
-    if ((lat1 == lat2) && (lon1 == lon2)) {
+  distance(lat1, lng1, lat2, lng2) {
+    if ((lat1 == lat2) && (lng1 == lng2)) {
       return 0;
     }
     else {
       var radlat1 = Math.PI * lat1/180;
       var radlat2 = Math.PI * lat2/180;
-      var theta = lon1-lon2;
+      var theta = lng1-lng2;
       var radtheta = Math.PI * theta/180;
       var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
       if (dist > 1) {
@@ -69,9 +67,14 @@ export class DriverHomePage {
       dist = Math.acos(dist);
       dist = dist * 180/Math.PI;
       dist = dist * 60 * 1.1515;
-      if (unit=="K") { dist = dist * 1.609344 }
-      if (unit=="N") { dist = dist * 0.8684 }
-      return dist;
+      dist = dist * 1.609344
+      if (dist <= 5){
+        console.log('The driver is in 5KM range')
+        return true
+      } else {
+        console.log('The driver not is in 5KM range')
+        return false
+      }
     }
   }
 
@@ -87,35 +90,31 @@ export class DriverHomePage {
     this.navCtrl.push(DriverTripDetailsPage)
   }
 
-  sendMsg(){
-    console.log("New message from client to websocket: " + this.message);
-    //this.ws.messages.next(this.message);
-    //this.message.message = "";
-  }
-
   wsConnect(){
+    console.log('Dentro de wsconnect')
     this.ws.webSocket.subscribe(trip_data => {
-      if (trip_data['message_type'] === 'available_drivers'){
-        this.newTrip(trip_data)
-      } else {
-        console.log('Ahora estamos en otro peo')
-        console.log(trip_data['message_type'])
+      this.trip.id = trip_data['id']
+      if (trip_data['message_type'] === 'trip_request'){
+        console.log('Dentro del IF')
+        this.geolocation.getCurrentPosition().then(driver_location => {
+          if (this.distance(trip_data['start_lat'], 
+                            trip_data['start_lng'],
+                            driver_location.coords.latitude, 
+                            driver_location.coords.longitude) <= 5){
+                              this.trip.start_driver_lat = driver_location.coords.latitude;
+                              this.trip.start_driver_lng = driver_location.coords.longitude;
+                              this.newTrip(trip_data);
+                            }
+        })
+      }
+      else if (trip_data['message_type'] === 'you_were_selected') {
+        this.navCtrl.setRoot(DriverTripDetailsPage)
       }
     },
     err => this.errorReload());
   }
 
   newTrip(trip_data){
-    this.trip.id = trip_data['id']
-    this.trip.pick_up = trip_data['pick_up']
-    this.trip.drop_off = trip_data['drop_off']
-    this.trip.uuid = trip_data['uuid']
-    this.trip.rider = trip_data['rider']
-    this.trip.rider_channel = trip_data['rider_channel']
-    this.trip.create_at = trip_data['create_at']
-    this.trip.status = trip_data['status']
-    this.trip.vehicle = trip_data['vehicle']
-    this.trip.date = trip_data['data']
     let activeVehicles: Array<string> = []
     activeVehicles = this.driver.searchActiveVehicles(trip_data['vehicle'])
     if (activeVehicles.length === 0){
@@ -139,46 +138,4 @@ export class DriverHomePage {
     this.navCtrl.setRoot(DriverHomePage)
   }
 
-  /*
-  tripAlert(pick_up, drop_off, datetime) {
-    console.log('Trip Alert')
-    if (!this.alertPresent){
-      this.alertPresent = true
-      const confirm = this.alertCrtl.create({
-        title: 'Solicitud de servicio',
-        message: 'Desde: ' + pick_up + '\n' + 
-                 'Hasta: ' + drop_off + '\n' + 
-                 '¿Estas interesado?',
-        buttons: [
-          {
-            text: 'Ahora no',
-            handler: () => {
-              console.log('Disagree clicked');
-            }
-          },
-          {
-            text: 'Ver detalles',
-            handler: () => {
-              this.controller.presentLoading
-              this.navCtrl.push(DriverTripsPage)
-            }
-          }
-        ]
-      });
-      confirm.present();
-      this.alertPresent = false
-    }
-    else {
-      console.log('Alert is Active')
-    }
-  }
-  vehicleStatus(vehicle:any){
-    if (this.wsIsOff){
-      this.tripEvent();
-      this.wsIsOff = false;
-      console.log('Ws ON');
-    }
-    console.log(this.wsIsOff)
-  }
-  */
 }

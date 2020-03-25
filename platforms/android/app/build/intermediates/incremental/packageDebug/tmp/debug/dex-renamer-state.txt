@@ -1,4 +1,4 @@
-#Sat Jan 04 15:34:58 ART 2020
+#Thu Mar 12 17:04:19 ART 2020
 base.0=/home/maxi/Apps/ssd/telollevo/frontend/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

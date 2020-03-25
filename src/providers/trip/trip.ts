@@ -36,6 +36,9 @@ export class TripProvider {
   date: string
   hour: string
   price: number
+  start_driver_lat: number
+  start_driver_lng: number
+  
   // ####################
   tripDetail: any;
 

@@ -27,8 +27,9 @@ export class DriverPricePage {
     let data = {'price': this.price, 
                 'trip': this.trip.id,
                 'rider_channel': this.trip.rider_channel,
-                'driver': this.user.id
-              }
+                'driver': this.user.id,
+                'start_driver_lat': this.trip.start_driver_lat,
+                'start_driver_lng': this.trip.start_driver_lng}
     this.ws.sendMsg('send_price', data, this.trip.vehicle)
     this.navCtrl.setRoot(DriverHomePage)
   }

@@ -5,10 +5,10 @@ webpackJsonp([5],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmailPageModule", function() { return EmailPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RiderVehiclePageModule", function() { return RiderVehiclePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__email__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rider_vehicle__ = __webpack_require__(171);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var EmailPageModule = /** @class */ (function () {
-    function EmailPageModule() {
+var RiderVehiclePageModule = /** @class */ (function () {
+    function RiderVehiclePageModule() {
     }
-    EmailPageModule = __decorate([
+    RiderVehiclePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__email__["a" /* EmailPage */],
+                __WEBPACK_IMPORTED_MODULE_2__rider_vehicle__["a" /* RiderVehiclePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__email__["a" /* EmailPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__rider_vehicle__["a" /* RiderVehiclePage */]),
             ],
         })
-    ], EmailPageModule);
-    return EmailPageModule;
+    ], RiderVehiclePageModule);
+    return RiderVehiclePageModule;
 }());
 
-//# sourceMappingURL=email.module.js.map
+//# sourceMappingURL=rider-vehicle.module.js.map
 
 /***/ })
 
